@@ -1,0 +1,27 @@
+@use "../../../default_mixin_setting/main_mixin" as *;
+@use "default-setting" as *;
+
+body{
+  font-family:"Noto Sans JP";
+}
+
+.header{
+
+  &__nav-container{
+    margin:$S-size $L-size 0 $L-size;
+    display:flex;
+    justify-content:space-between;
+
+
+    &__sp-3line-bar{
+      width:80px;
+      height:80px;
+      border:1px solid black;
+    }
+    
+  }
+  
+}
+
+
+
