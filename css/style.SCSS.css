@@ -55,7 +55,7 @@ body {
 }
 
 h1 {
-  font-size: clamp(36px, 1rem, 40px);
+  font-size: clamp(36px, 2.25rem, 40px);
 }
 
 h3 {
@@ -63,7 +63,7 @@ h3 {
 }
 
 .header__nav-container {
-  margin: clamp(16px, 1rem, 20px) clamp(24px, 1.5rem, 28px) 0 clamp(24px, 1.5rem, 28px);
+  margin: clamp(16px, 1rem, 24px) clamp(24px, 1.5rem, 32px) 0 clamp(24px, 1.5rem, 32px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,17 +80,37 @@ h3 {
   margin: 20% auto;
   border: 1px solid #E2001B;
 }
-.header__text-container {
-  margin: clamp(16px, 1rem, 20px) clamp(24px, 1.5rem, 28px);
+.header__top-container {
+  margin: clamp(16px, 1rem, 24px) clamp(24px, 1.5rem, 32px);
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.header__text-container__h3 {
+.header__top-container__h3 {
   color: #E2001B;
 }
 .header__main-img {
-  height: 500px;
   width: 100%;
+}
+.header__bottom-container {
+  margin: clamp(16px, 1rem, 24px) clamp(24px, 1.5rem, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 1.5rem, 32px);
+}
+.header__bottom-container__h4 {
+  color: #6d6d6d;
+}
+.header__bottom-container__img-1 {
+  width: 80%;
+}
+.header__btn {
+  background-color: #F1B007;
+  width: 100%;
+  text-align: center;
+  padding: clamp(8px, 0.5rem, 16px) 0;
+}
+.header__btn__span {
+  font-size: clamp(12px, 0.75rem, 16px);
 }
 /*# sourceMappingURL=style.SCSS.css.map */

@@ -8,12 +8,19 @@ $light-gray:#fafafa;
 $dark-gray:#6d6d6d;
 $yellow:#F1B007;
 
-// font-size,spaceで使用
-$SS-size:clamp(8px,0.5rem,12px);
-$S-size:clamp(16px,1rem,20px);
-$M-size:clamp(20px,1.25rem,24px);
-$L-size:clamp(24px,1.5rem,28px);
-$LL-size:clamp(36px,1rem,40px);
+// font-sizeで使用
+$font-8:clamp(8px,0.5rem,12px);
+$font-12:clamp(12px,0.75rem,16px);
+$font-16:clamp(16px,1rem,20px);
+$font-20:clamp(20px,1.25rem,24px);
+$font-24:clamp(24px,1.5rem,28px);
+$font-36:clamp(36px,2.25rem,40px);
+
+$space-8:clamp(8px,0.5rem,16px);
+$space-16:clamp(16px,1rem,24px);
+$space-24:clamp(24px,1.5rem,32px);
+$space-32:clamp(32px,2rem,40px);
+$space-36:clamp(36px,2.25rem,44px);
 
 
 

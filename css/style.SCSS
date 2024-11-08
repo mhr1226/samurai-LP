@@ -6,17 +6,18 @@ body{
 }
 
 h1{
-  font-size:$LL-size;
+  font-size:$font-36;
 }
-
+// h2は24px
 h3{
-  font-size:$M-size;
+  font-size:$font-20;
 }
+// h4は16px
 
 .header{
 
   &__nav-container{
-    margin:$S-size $L-size 0 $L-size;
+    margin:$space-16 $space-24 0 $space-24;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -39,8 +40,8 @@ h3{
     
   }
 
-  &__text-container{
-    margin:$S-size $L-size;
+  &__top-container{
+    margin:$space-16 $space-24;
     display:flex;
     flex-direction:column;
     gap:24px;
@@ -50,10 +51,34 @@ h3{
   }
 
   &__main-img{
-    height:500px;
     width:100%;
   }
-  
+
+  &__bottom-container{
+    margin:$space-16 $space-24;
+    display:flex;
+    flex-direction:column;
+    gap:$space-24;
+
+    &__h4{
+      color:$dark-gray;
+    }
+
+    &__img-1{
+      width:80%;
+    }
+  }
+
+  &__btn{
+    background-color:$yellow;
+    width:100%;
+    text-align:center;
+    padding:$space-8 0;
+
+    &__span{
+      font-size:$font-12;
+    }
+  }
 }
 
 
