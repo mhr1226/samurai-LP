@@ -118,6 +118,7 @@ h3{
 }
 
 .main{
+  /*オーダーメイド*/
   &__order-made-container{
     display:flex;
     flex-direction:column;
@@ -210,6 +211,7 @@ h3{
     }
   }
 
+  /*サービス*/
   &__service{
     background-color:$dark-red;
     padding:$space-24;
