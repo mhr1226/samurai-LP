@@ -144,6 +144,7 @@ h3 {
 .main {
   /*オーダーメイド*/
   /*サービス*/
+  /*サポート*/
 }
 .main__order-made-container {
   display: flex;
@@ -304,5 +305,30 @@ h3 {
   .main__service__main-container__curriculum-main-container__img {
     width: 100%;
   }
+}
+.main__supports {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 1.5rem, 32px);
+  margin: clamp(36px, 2.25rem, 44px) clamp(24px, 1.5rem, 32px);
+}
+.main__supports__h2 {
+  text-align: center;
+}
+.main__supports__card-container1 {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 1.5rem, 32px);
+}
+.main__supports__card-container1__h3 {
+  color: #E2001B;
+  text-align: center;
+}
+.main__supports__card-container1__h3__span {
+  display: block;
+  background-color: #E2001B;
+  width: 10%;
+  height: 2px;
+  margin: clamp(8px, 0.5rem, 16px) auto 0 auto;
 }
 /*# sourceMappingURL=style.SCSS.css.map */
