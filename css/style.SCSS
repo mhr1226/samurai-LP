@@ -322,12 +322,16 @@ h3{
     gap:$space-24;
     margin:$space-36 $space-24;
 
+    @include media(480px){
+      margin:$space-16 $space-8;
+    }
+
 
     &__h2{
       text-align:center;
     }
-
-    &__card-container1{
+  
+    &__card-container{
       @include flex-column();
       gap:$space-24;
       &__h3{
@@ -340,7 +344,50 @@ h3{
           width:10%;
           height:2px;
           margin:$space-8 auto 0 auto;
+        }
 
+        &__span2{
+          @include media(480px){
+            display:block;
+          }
+        }
+      }
+
+      &__h4{
+        &__span{
+          @include media(480px){
+            display:block;
+          }
+        }
+      }
+
+      &__card-img-container{
+          position:relative;
+          display:flex;
+          justify-content:flex-end;
+          &__img{
+            width:100%;
+
+            @include media(480px){
+              width:90%;
+            }
+          }
+
+        &__span{
+          font-size:56px;
+          font-weight:bold;
+          color:$red;
+          position:absolute;
+          bottom:-36px;
+          left:0;
+        }
+      }
+
+      &__p{
+        &__span{
+          display:block;
+          // 行間を入れる為のCSS
+          margin:2px 0;
         }
       }
     }
