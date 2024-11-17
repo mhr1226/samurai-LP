@@ -56,38 +56,15 @@ h3{
     }
     &__h3{
       color:$red;
-      word-break:auto-phrase;
+      @include br-sp();
     }
 
     &__h1{
       font-size:$font-36;
 
-      &__span2{
-        @include media(){
-          display:block;
-        margin-left:18%;
-        }
-      }
+      @include br-tb();
 
-      @include media(500px){
-        &__span1{
-          display:block;
-        }
-
-        &__span2{
-          margin:0;
-        }
-
-        &__span3{
-          display:block;
-        }
-      }
-
-      
-
-      
-
-      
+      @include br-sp();
     }
   }
 
@@ -108,6 +85,12 @@ h3{
 
     &__h4{
       color:$dark-gray;
+
+      @include media-sp(){
+        font-size:$font-20;
+      }
+
+      @include br-sp();
     }
 
     &__img-1{
@@ -125,7 +108,7 @@ h3{
     text-align:center;
     padding:$space-8 0;
 
-    &__span{
+    &__p{
       font-size:$font-12;
     }
   }
@@ -149,7 +132,7 @@ h3{
     &__top-content{
       
       &__h2{
-        word-break:auto-phrase;
+        @include br-sp();
       }
     }
 
@@ -173,15 +156,7 @@ h3{
       }
 
       &__h3{
-        
-
-        @include media(){
-          &__span{
-          display:block;
-        }
-        }
-        
-
+        @include br-sp;
       }
 
       &__user-content{
@@ -221,11 +196,7 @@ h3{
       &__p1{
         font-weight:bold;
 
-        &__span{
-          @include media(){
-            display:block;
-          }
-        }
+        @include br-tb();
       }
 
       &__p2{
@@ -269,12 +240,8 @@ h3{
     &__h2{
       color:$white;
 
-      &__span{
-        @include media(){
-          display:block;
-        }
-        
-      }
+    @include br-tb();
+    @include br-sp();
     }
 
     &__main-container{

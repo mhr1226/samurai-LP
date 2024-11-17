@@ -1,4 +1,8 @@
 @charset "UTF-8";
+br {
+  display: none;
+}
+
 *,
 *::before,
 *::after {
@@ -100,25 +104,22 @@ h3 {
 }
 .header__top-container__h3 {
   color: #E2001B;
-  word-break: auto-phrase;
+}
+@media screen and (max-width: 500px) {
+  .header__top-container__h3 .br-sp {
+    display: block;
+  }
 }
 .header__top-container__h1 {
   font-size: 36px;
 }
 @media screen and (max-width: 800px) {
-  .header__top-container__h1__span2 {
+  .header__top-container__h1 .br-tb {
     display: block;
-    margin-left: 18%;
   }
 }
 @media screen and (max-width: 500px) {
-  .header__top-container__h1__span1 {
-    display: block;
-  }
-  .header__top-container__h1__span2 {
-    margin: 0;
-  }
-  .header__top-container__h1__span3 {
+  .header__top-container__h1 .br-sp {
     display: block;
   }
 }
@@ -140,6 +141,16 @@ h3 {
 .header__bottom-container__h4 {
   color: #6d6d6d;
 }
+@media screen and (max-width: 500px) {
+  .header__bottom-container__h4 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header__bottom-container__h4 .br-sp {
+    display: block;
+  }
+}
 .header__bottom-container__img-1 {
   width: 80%;
 }
@@ -154,7 +165,7 @@ h3 {
   text-align: center;
   padding: 8px 0;
 }
-.header__btn__span {
+.header__btn__p {
   font-size: 12px;
 }
 
@@ -177,8 +188,10 @@ h3 {
     margin: 16px 16px 24px 16px;
   }
 }
-.main__order-made-container__top-content__h2 {
-  word-break: auto-phrase;
+@media screen and (max-width: 500px) {
+  .main__order-made-container__top-content__h2 .br-sp {
+    display: block;
+  }
 }
 .main__order-made-container__main-content {
   background-color: #fafafa;
@@ -201,8 +214,8 @@ h3 {
     gap: 8px;
   }
 }
-@media screen and (max-width: 800px) {
-  .main__order-made-container__main-content__head-content__h3__span {
+@media screen and (max-width: 500px) {
+  .main__order-made-container__main-content__head-content__h3 .br-sp {
     display: block;
   }
 }
@@ -243,7 +256,7 @@ h3 {
   font-weight: bold;
 }
 @media screen and (max-width: 800px) {
-  .main__order-made-container__main-content__process-content__p1__span {
+  .main__order-made-container__main-content__process-content__p1 .br-tb {
     display: block;
   }
 }
@@ -279,7 +292,12 @@ h3 {
   color: #ffffff;
 }
 @media screen and (max-width: 800px) {
-  .main__service__h2__span {
+  .main__service__h2 .br-tb {
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main__service__h2 .br-sp {
     display: block;
   }
 }
