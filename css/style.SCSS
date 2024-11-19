@@ -22,7 +22,7 @@ h3{
     justify-content:space-between;
     align-items:center;
 
-    @include media(500px){
+    @include media-sp(){
       margin:$space-8 $space-16 0 $space-16;
     }
 
@@ -202,6 +202,49 @@ h3{
       &__p2{
         font-weight:bold;
         color:$red;
+      }
+
+      &-allow-box{
+        @include flex;
+        gap:$space-8;
+        margin-bottom:$space-8;
+
+
+        &-p{
+          font-size:$font-16;
+          font-weight:bold;
+          @include media-sp{
+            font-size:$font-12;
+          }
+        }
+      }
+
+      &-table{
+        border-spacing:0 $space-8;
+
+        @include media-sp{
+          border-spacing:0;
+        }
+        &-tr{
+
+          &-td1,&-td2{
+            padding:$space-12 $space-8;
+            @include media-sp{
+              padding:$space-8 $space-4;
+              display:block;
+              @include br-sp;
+              
+            }
+          }
+          &-td1{
+            background-color:$dark-red;
+            color:$white;
+          }
+
+          &-td2{
+            background-color: $white;
+          }
+        }
       }
     }
 
