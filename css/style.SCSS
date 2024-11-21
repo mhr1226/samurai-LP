@@ -207,7 +207,6 @@ h3{
       &-allow-box{
         @include flex;
         gap:$space-8;
-        margin-bottom:$space-8;
 
 
         &-p{
@@ -233,7 +232,6 @@ h3{
               padding:$space-8 $space-4;
               display:block;
               @include br-sp;
-              
             }
           }
           &-td1{
@@ -314,53 +312,113 @@ h3{
       margin:0 auto;
     }
 
-    &__curriculum-main-container{
-      display:flex;
-      flex-direction:row;
-      gap:$space-16;
+    // &-curriculum-container{
+    //   @include flex-column;
+    //   gap:$space-16;
 
-      @include media(500px){
-        flex-direction:column;
-        gap:$space-8;
-      }
+    //   // カリキュラム1本目
+    //   &-content{
+    //     @include flex(flex,flex-start,center);
+    //     gap:$space-12;
+    //     @include media-sp(){
+    //       @include flex-column;
+    //       justify-content:center;
+    //       align-items:flex-start;
+    //     }
 
-      &__curriculum-head-container{
-      display:flex;
-      flex-direction:column;
-      gap:$space-16;
-      width:25%;
+    //     // 白背景のdiv
+    //     &-head{
+    //       background-color:$white;
+    //       clip-path:polygon(0 0,80% 0,100% 50%,80% 100%,0 100%);
+    //       @include br-tb; 
+    //       @include media-sp{
+    //         clip-path:none;
+    //         width:70%;
+    //         @include br-none;
+    //       }
 
-      @include media(500px){
-        flex-direction:row;
-        gap:$space-8;
-        width:100%;
-      }
-      
-      &__img1{
-        width:100%;
 
-        @include media(500px){
-          width:40%;
-        }
-      }
+    //       // 当塾のカリキュラム構成（テキストへのCSS）
+    //     &-h4{
+    //       color:$dark-red;
+    //       padding:$space-8 $space-24 $space-8 0;
+    //       text-align:center;
+    //       @include media-sp{
+    //         padding:$space-8;
+    //       }
+    //     }
+    //     }
 
-      &__img2{
-        width:100%;
+    //     &-bar{
+    //       display:flex;
+    //       position:relative;
+    //       &-left{
+    //         @include flex-column;
+    //         &-p{
+    //         color:$white;
+    //         font-size:$font-12;
+    //         text-align:center;
+    //         padding:0 $space-12;
+    //       }
 
-        @include media(500px){
-          width:40%;
-        }
-      }
-    }
+    //       &-white{
+    //         background-color:$white;
+    //         text-align:center;
+    //         padding:$space-16 0;
 
-    &__img{
-      width:70%;
+    //         &-p{
+    //           font-weight:bold;
 
-      @include media(500px){
-        width:100%;
-      }
-    }
-    }
+    //           &-span{
+    //             font-size:$font-12;
+
+    //           }
+    //         }
+    //       }
+    //       }
+
+    //       &-right{
+    //         @include flex-column;
+    //         &-p{
+    //         color:$white;
+    //         font-size:$font-12;
+    //         text-align:center;
+    //       }
+
+    //       &-yellow{
+    //         background-color:$yellow;
+    //         text-align:center;
+    //         padding:$space-16 0;
+
+    //         &-p{
+    //           font-weight:bold;
+
+    //           &-span{
+    //             font-size:$font-12;
+
+    //           }
+    //         }
+    //       }
+    //       }
+
+    //       &-img{
+    //         position:absolute;
+    //         width:80%;
+    //         bottom:-5%;
+    //         right:-4%;
+
+
+
+
+
+
+    //       }
+          
+    //     }
+
+
+    //   }
+    // }
 
     
     }
@@ -464,6 +522,128 @@ h3{
     }
   }
 }
+
+// カリキュラムセクション
+.bar{
+  background-color:$dark-red;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:$space-24;
+
+  @include media-sp{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:$space-12;
+  }
+}
+
+// 見出し部分
+.content-left{
+  width:25%;
+
+  @include media-sp{
+    width:70%;
+  }
+  .head-main{
+  background-color:$white;
+  p{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:$space-4;
+    text-align:center;
+    font-weight:bold;
+    font-size:clamp(12px,2vw,16px);
+
+    @include media-sp{
+      justify-content:center;
+    }
+
+    br{
+      display:block;
+    }
+
+    span{
+      display:inline-block;
+      width:clamp(12px,2vw,16px);
+      height:clamp(12px,2vw,24px);
+      background-color:black;
+      clip-path:polygon(0 0,100% 50%,0 100%);
+
+      @include media-sp{
+        clip-path:polygon(0 0,100% 0,50% 100%);
+
+      }
+    }
+  }
+}
+}
+
+
+// バー部分
+.content-right{
+  width:70%;
+  position:relative;
+
+  @include media-sp{
+    width:100%;
+  }
+
+  .heading{
+  display:flex;
+  justify-content:space-around;
+
+  p{
+    width:50%;
+    font-size:12px;
+    text-align:center;
+    color:white;
+    @include br-tb;
+    @include br-sp;
+
+  }
+}
+
+.liner{
+  position:relative;
+  height:50px;
+  background:linear-gradient(
+    to right,
+    $white 50%,
+    $yellow 50%
+    );
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    p{
+      font-weight:bold;
+
+      span{
+        font-size:12px;
+        padding-left:1px;
+      }
+    }
+
+    img{
+      position:absolute;
+      bottom:-4px;
+      right:-8px;
+      
+    }
+}
+
+.sub-span{
+  color:$white;
+  font-size:12px;
+  position:absolute;
+  right:5%;
+}
+}
+
+
+
 
 
 

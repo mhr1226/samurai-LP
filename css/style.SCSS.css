@@ -269,7 +269,6 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
 }
 .main__order-made-container__main-content__process-content-allow-box-p {
   font-size: 16px;
@@ -373,54 +372,6 @@ h3 {
   width: 50%;
   margin: 0 auto;
 }
-.main__service__main-container__curriculum-main-container {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__curriculum-main-container {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-.main__service__main-container__curriculum-main-container__curriculum-head-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 25%;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__curriculum-main-container__curriculum-head-container {
-    flex-direction: row;
-    gap: 8px;
-    width: 100%;
-  }
-}
-.main__service__main-container__curriculum-main-container__curriculum-head-container__img1 {
-  width: 100%;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__curriculum-main-container__curriculum-head-container__img1 {
-    width: 40%;
-  }
-}
-.main__service__main-container__curriculum-main-container__curriculum-head-container__img2 {
-  width: 100%;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__curriculum-main-container__curriculum-head-container__img2 {
-    width: 40%;
-  }
-}
-.main__service__main-container__curriculum-main-container__img {
-  width: 70%;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__curriculum-main-container__img {
-    width: 100%;
-  }
-}
 .main__supports {
   display: flex;
   flex-direction: column;
@@ -500,5 +451,119 @@ h3 {
 .main__voice__card-container {
   display: flex;
   gap: 16px;
+}
+
+.bar {
+  background-color: #B40015;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+@media screen and (max-width: 500px) {
+  .bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+.content-left {
+  width: 25%;
+}
+@media screen and (max-width: 500px) {
+  .content-left {
+    width: 70%;
+  }
+}
+.content-left .head-main {
+  background-color: #ffffff;
+}
+.content-left .head-main p {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: clamp(12px, 2vw, 16px);
+}
+@media screen and (max-width: 500px) {
+  .content-left .head-main p {
+    justify-content: center;
+  }
+}
+.content-left .head-main p br {
+  display: block;
+}
+.content-left .head-main p span {
+  display: inline-block;
+  width: clamp(12px, 2vw, 16px);
+  height: clamp(12px, 2vw, 24px);
+  background-color: black;
+  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+@media screen and (max-width: 500px) {
+  .content-left .head-main p span {
+    -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+}
+
+.content-right {
+  width: 70%;
+  position: relative;
+}
+@media screen and (max-width: 500px) {
+  .content-right {
+    width: 100%;
+  }
+}
+.content-right .heading {
+  display: flex;
+  justify-content: space-around;
+}
+.content-right .heading p {
+  width: 50%;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .content-right .heading p .br-tb {
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-right .heading p .br-sp {
+    display: block;
+  }
+}
+.content-right .liner {
+  position: relative;
+  height: 50px;
+  background: linear-gradient(to right, #ffffff 50%, #F1B007 50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.content-right .liner p {
+  font-weight: bold;
+}
+.content-right .liner p span {
+  font-size: 12px;
+  padding-left: 1px;
+}
+.content-right .liner img {
+  position: absolute;
+  bottom: -4px;
+  right: -8px;
+}
+.content-right .sub-span {
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  right: 5%;
 }
 /*# sourceMappingURL=style.SCSS.css.map */
