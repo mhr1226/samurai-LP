@@ -530,6 +530,7 @@ h3{
   justify-content:space-between;
   align-items:center;
   padding:$space-24;
+  position:relative;
 
   @include media-sp{
     flex-direction:column;
@@ -545,9 +546,9 @@ h3{
   @include media-sp{
     width:70%;
   }
-  .head-main{
-  background-color:$white;
-  p{
+  
+  .head-p{
+    background-color:$white;
     display:flex;
     justify-content:space-around;
     align-items:center;
@@ -565,19 +566,23 @@ h3{
     }
 
     span{
-      display:inline-block;
-      width:clamp(12px,2vw,16px);
-      height:clamp(12px,2vw,24px);
-      background-color:black;
-      clip-path:polygon(0 0,100% 50%,0 100%);
-
+      @include triangle(
+        inline-block,
+        clamp(12px,2vw,16px),
+        clamp(12px,2vw,24px),
+        black
+        );
       @include media-sp{
-        clip-path:polygon(0 0,100% 0,50% 100%);
+        clip-path:polygon(
+          0 0,
+          100% 0,
+          50% 100%
+          );
 
       }
     }
   }
-}
+// }
 }
 
 
@@ -626,20 +631,30 @@ h3{
       }
     }
 
-    img{
-      position:absolute;
-      bottom:-4px;
-      right:-8px;
-      
-    }
 }
 
 .sub-span{
   color:$white;
   font-size:12px;
   position:absolute;
-  right:5%;
+  right:10%;
+  bottom:-20%;
 }
+}
+
+.allow{
+  @include allow-line(black,80%,2px);
+  position:absolute;
+  bottom:28px;
+  right:28px;
+
+  span{
+    @include allow-triangle();
+  }
+
+  @include media-min-tb(){
+    width:55%;
+  }
 }
 
 
