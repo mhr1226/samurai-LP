@@ -524,8 +524,12 @@ h3{
 }
 
 // カリキュラムセクション
+
+.bar-sec{
+  @include flex-column;
+  gap:12px;
+}
 .bar{
-  background-color:$dark-red;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -590,6 +594,9 @@ h3{
 .content-right{
   width:70%;
   position:relative;
+  @include flex-column;
+  gap:8px;
+
 
   @include media-sp{
     width:100%;
@@ -640,6 +647,14 @@ h3{
   right:10%;
   bottom:-20%;
 }
+
+.bottom-span{
+  font-size:8px;
+  color:white;
+  position:absolute;
+  bottom:-18%;
+  left:5%;
+}
 }
 
 .allow{
@@ -657,7 +672,47 @@ h3{
   }
 }
 
+// 2つ目のカリキュラムバー
 
+.content-left2{
+  @extend .content-left;
+  color:white;
+  
+
+  .head-p{
+    background-color:$dark-red;
+    span{
+      background-color:white;
+    }
+  }
+}
+
+.content-right2{
+  @extend .content-right;
+
+  .liner{
+    background:linear-gradient(
+    to right,
+    $white 80%,
+    $yellow 20%
+    );
+    justify-content:flex-start;
+    
+
+    p{
+      position:absolute;
+    }
+    .number1{
+      left:35%;
+    }
+
+    .number2{
+      right:3%;
+
+    }
+  }
+
+}
 
 
 

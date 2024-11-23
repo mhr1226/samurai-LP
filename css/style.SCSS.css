@@ -453,8 +453,13 @@ h3 {
   gap: 16px;
 }
 
+.bar-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .bar {
-  background-color: #B40015;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -469,15 +474,15 @@ h3 {
   }
 }
 
-.content-left {
+.content-left, .content-left2 {
   width: 25%;
 }
 @media screen and (max-width: 500px) {
-  .content-left {
+  .content-left, .content-left2 {
     width: 70%;
   }
 }
-.content-left .head-p {
+.content-left .head-p, .content-left2 .head-p {
   background-color: #ffffff;
   display: flex;
   justify-content: space-around;
@@ -488,14 +493,14 @@ h3 {
   font-size: clamp(12px, 2vw, 16px);
 }
 @media screen and (max-width: 500px) {
-  .content-left .head-p {
+  .content-left .head-p, .content-left2 .head-p {
     justify-content: center;
   }
 }
-.content-left .head-p br {
+.content-left .head-p br, .content-left2 .head-p br {
   display: block;
 }
-.content-left .head-p span {
+.content-left .head-p span, .content-left2 .head-p span {
   display: inline-block;
   width: clamp(12px, 2vw, 16px);
   height: clamp(12px, 2vw, 24px);
@@ -504,42 +509,45 @@ h3 {
           clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 @media screen and (max-width: 500px) {
-  .content-left .head-p span {
+  .content-left .head-p span, .content-left2 .head-p span {
     -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
   }
 }
 
-.content-right {
+.content-right, .content-right2 {
   width: 70%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 @media screen and (max-width: 500px) {
-  .content-right {
+  .content-right, .content-right2 {
     width: 100%;
   }
 }
-.content-right .heading {
+.content-right .heading, .content-right2 .heading {
   display: flex;
   justify-content: space-around;
 }
-.content-right .heading p {
+.content-right .heading p, .content-right2 .heading p {
   width: 50%;
   font-size: 12px;
   text-align: center;
   color: white;
 }
 @media screen and (max-width: 800px) {
-  .content-right .heading p .br-tb {
+  .content-right .heading p .br-tb, .content-right2 .heading p .br-tb {
     display: block;
   }
 }
 @media screen and (max-width: 500px) {
-  .content-right .heading p .br-sp {
+  .content-right .heading p .br-sp, .content-right2 .heading p .br-sp {
     display: block;
   }
 }
-.content-right .liner {
+.content-right .liner, .content-right2 .liner {
   position: relative;
   height: 50px;
   background: linear-gradient(to right, #ffffff 50%, #F1B007 50%);
@@ -547,19 +555,26 @@ h3 {
   justify-content: space-around;
   align-items: center;
 }
-.content-right .liner p {
+.content-right .liner p, .content-right2 .liner p {
   font-weight: bold;
 }
-.content-right .liner p span {
+.content-right .liner p span, .content-right2 .liner p span {
   font-size: 12px;
   padding-left: 1px;
 }
-.content-right .sub-span {
+.content-right .sub-span, .content-right2 .sub-span {
   color: #ffffff;
   font-size: 12px;
   position: absolute;
   right: 10%;
   bottom: -20%;
+}
+.content-right .bottom-span, .content-right2 .bottom-span {
+  font-size: 8px;
+  color: white;
+  position: absolute;
+  bottom: -18%;
+  left: 5%;
 }
 
 .allow {
@@ -584,5 +599,29 @@ h3 {
   .allow {
     width: 55%;
   }
+}
+
+.content-left2 {
+  color: white;
+}
+.content-left2 .head-p {
+  background-color: #B40015;
+}
+.content-left2 .head-p span {
+  background-color: white;
+}
+
+.content-right2 .liner {
+  background: linear-gradient(to right, #ffffff 80%, #F1B007 20%);
+  justify-content: flex-start;
+}
+.content-right2 .liner p {
+  position: absolute;
+}
+.content-right2 .liner .number1 {
+  left: 35%;
+}
+.content-right2 .liner .number2 {
+  right: 3%;
 }
 /*# sourceMappingURL=style.SCSS.css.map */
