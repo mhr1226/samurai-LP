@@ -251,6 +251,7 @@ h3{
     }
   }
 
+
   /*サービス*/
   &__service{
     background-color:$dark-red;
@@ -373,134 +374,214 @@ h3{
               }
             }
           }
+          // content-leftここまで
         }
+        // content-rightここから
+        &__content-right{
+          width:70%;
+          position:relative;
+          @include flex-column;
+          gap:8px;
+
+          @include media-sp{
+            width:100%;
+          }
+
+          &-heading{
+            display:flex;
+            justify-content:space-around;
+
+            &-p{
+              width:50%;
+              font-size:12px;
+              text-align:center;
+              color:white;
+              @include br-tb;
+              @include br-sp;
+            }
+          }
+
+            &-liner{
+              position:relative;
+              height:50px;
+              background:linear-gradient(
+              to right,
+              $white 50%,
+              $yellow 50%
+              );
+              display:flex;
+              justify-content:space-around;
+              align-items:center;
+
+
+              &-p{
+                font-weight:bold;
+
+                &-span{
+                  font-size:12px;
+                  padding-left:1px;
+                }
+              }
+            }
+
+            &-sub-span{
+              color:$white;
+              font-size:12px;
+              position:absolute;
+              right:10%;
+              bottom:-20%;
+            }
+
+            &-allow{
+              @include allow-line(black,90%,2px);
+              position:absolute;
+              bottom:5%;
+              right:0;
+              
+              &-span{
+                @include allow-triangle();
+              }
+            }
+            // content-rightここまで
         }
 
-        
+        // content-left2ここから
+        &__content-left2{
+          width:25%;
+
+          @include media-sp{
+            width:70%;
+          }
+          color:white;
+
+          &-p{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            gap:$space-4;
+            text-align:center;
+            font-weight:bold;
+            font-size:clamp(12px,2vw,16px);
+            background-color:$dark-red;
+
+
+            @include media-sp{
+              justify-content:center;
+            }
+
+            &-span{
+              @include triangle(
+                inline-block,
+                clamp(12px,2vw,16px),
+                clamp(12px,2vw,24px),
+                // 黒を白に変える（後で）
+                $white
+                );
+              @include media-sp{
+                clip-path:polygon(
+                  0 0,
+                  100% 0,
+                  50% 100%
+                  );
+              }
+            }
+          }
+          // content-left2ここまで
+        }
+
+        // content-right2ここから
+        &__content-right2{
+          width:70%;
+          position:relative;
+          @include flex-column;
+          gap:8px;
+
+          @include media-sp{
+            width:100%;
+          }
+
+          &-heading{
+            display:flex;
+            justify-content:space-around;
+
+            &-p{
+              width:50%;
+              font-size:12px;
+              text-align:center;
+              color:white;
+              @include br-tb;
+              @include br-sp;
+            }
+          }
+          
+
+          &-liner{
+            position:relative;
+            height:50px;
+            background:linear-gradient(
+            to right,
+            $white 80%,
+            $yellow 20%
+            );
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+          
+            &-p1{
+              position:absolute;
+              left:35%;
+              font-weight:bold;
+
+              &-span{
+              font-size:12px;
+              padding-left:1px;
+              }
+            }
+
+            &-p2{
+              position:absolute;
+              right:3%;
+              font-weight:bold;
+
+              &-span{
+                font-size:12px;
+                padding-left:1px;
+                }
+            }
+          }
+
+          &-sub-span{
+            color:$white;
+            font-size:12px;
+            position:absolute;
+            right:10%;
+            bottom:-20%;
+          }
+
+          &-bottom-span{
+            font-size:8px;
+            color:white;
+            position:absolute;
+            bottom:-18%;
+            left:5%;
+          }
+
+          &-allow{
+            @include allow-line(black,90%,2px);
+            position:absolute;
+            bottom:5%;
+            right:0;
+
+            &-span{
+              @include allow-triangle();
+            }
+          }
+        }
+        // barここまで
+        }
+
+        // bar-secここまで
       }
-
-
-// バー部分
-.content-right{
-  width:70%;
-  position:relative;
-  @include flex-column;
-  gap:8px;
-
-
-  @include media-sp{
-    width:100%;
-  }
-
-  .heading{
-  display:flex;
-  justify-content:space-around;
-
-  p{
-    width:50%;
-    font-size:12px;
-    text-align:center;
-    color:white;
-    @include br-tb;
-    @include br-sp;
-
-  }
-}
-
-.liner{
-  position:relative;
-  height:50px;
-  background:linear-gradient(
-    to right,
-    $white 50%,
-    $yellow 50%
-    );
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-
-    p{
-      font-weight:bold;
-
-      span{
-        font-size:12px;
-        padding-left:1px;
-      }
-    }
-
-}
-
-.sub-span{
-  color:$white;
-  font-size:12px;
-  position:absolute;
-  right:10%;
-  bottom:-20%;
-}
-
-.bottom-span{
-  font-size:8px;
-  color:white;
-  position:absolute;
-  bottom:-18%;
-  left:5%;
-}
-}
-
-.allow{
-  @include allow-line(black,90%,2px);
-  position:absolute;
-  bottom:5%;
-  right:0;
-
-  span{
-    @include allow-triangle();
-  }
-}
-
-// 2つ目のカリキュラムバー
-
-.content-left2{
-  @extend .content-left;
-  color:white;
-  
-
-  .head-p{
-    background-color:$dark-red;
-    span{
-      background-color:white;
-    }
-  }
-}
-
-.content-right2{
-  @extend .content-right;
-
-  .liner{
-    background:linear-gradient(
-    to right,
-    $white 80%,
-    $yellow 20%
-    );
-    justify-content:flex-start;
-    
-
-    p{
-      position:absolute;
-    }
-    .number1{
-      left:35%;
-    }
-
-    .number2{
-      right:3%;
-
-    }
-  }
-
-}
-
-    
     }
 
     
@@ -603,193 +684,6 @@ h3{
   }
 }
 
-// カリキュラムセクション
-
-// .bar-sec{
-//   @include flex-column;
-//   gap:12px;
-// }
-// .bar{
-//   display:flex;
-//   justify-content:space-between;
-//   align-items:center;
-//   padding:$space-24;
-//   position:relative;
-
-//   @include media-sp{
-//     flex-direction:column;
-//     align-items:flex-start;
-//     gap:$space-12;
-//   }
-// 
-
-// 見出し部分
-// 全て移行したらメモにしてみる
-.content-left{
-  width:25%;
-
-  @include media-sp{
-    width:70%;
-  }
-  
-  .head-p{
-    background-color:$white;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    gap:$space-4;
-    text-align:center;
-    font-weight:bold;
-    font-size:clamp(12px,2vw,16px);
-
-    @include media-sp{
-      justify-content:center;
-    }
-
-    br{
-      display:block;
-    }
-
-    span{
-      @include triangle(
-        inline-block,
-        clamp(12px,2vw,16px),
-        clamp(12px,2vw,24px),
-        black
-        );
-      @include media-sp{
-        clip-path:polygon(
-          0 0,
-          100% 0,
-          50% 100%
-          );
-
-      }
-    }
-  }
-// }
-}
-
-
-// バー部分
-.content-right{
-  width:70%;
-  position:relative;
-  @include flex-column;
-  gap:8px;
-
-
-  @include media-sp{
-    width:100%;
-  }
-
-  .heading{
-  display:flex;
-  justify-content:space-around;
-
-  p{
-    width:50%;
-    font-size:12px;
-    text-align:center;
-    color:white;
-    @include br-tb;
-    @include br-sp;
-
-  }
-}
-
-.liner{
-  position:relative;
-  height:50px;
-  background:linear-gradient(
-    to right,
-    $white 50%,
-    $yellow 50%
-    );
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-
-    p{
-      font-weight:bold;
-
-      span{
-        font-size:12px;
-        padding-left:1px;
-      }
-    }
-
-}
-
-.sub-span{
-  color:$white;
-  font-size:12px;
-  position:absolute;
-  right:10%;
-  bottom:-20%;
-}
-
-.bottom-span{
-  font-size:8px;
-  color:white;
-  position:absolute;
-  bottom:-18%;
-  left:5%;
-}
-}
-
-.allow{
-  @include allow-line(black,90%,2px);
-  position:absolute;
-  bottom:5%;
-  right:0;
-
-  span{
-    @include allow-triangle();
-  }
-}
-
-// 2つ目のカリキュラムバー
-
-.content-left2{
-  @extend .content-left;
-  color:white;
-  
-
-  .head-p{
-    background-color:$dark-red;
-    span{
-      background-color:white;
-    }
-  }
-}
-
-.content-right2{
-  @extend .content-right;
-
-  .liner{
-    background:linear-gradient(
-    to right,
-    $white 80%,
-    $yellow 20%
-    );
-    justify-content:flex-start;
-    
-
-    p{
-      position:absolute;
-    }
-    .number1{
-      left:35%;
-    }
-
-    .number2{
-      right:3%;
-
-    }
-  }
-
-}
 
 
 
