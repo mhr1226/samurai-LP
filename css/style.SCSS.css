@@ -67,105 +67,105 @@ h3 {
   font-size: 20px;
 }
 
-.header__nav-container {
+.header-nav {
   margin: 16px 24px 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 @media screen and (max-width: 500px) {
-  .header__nav-container {
+  .header-nav {
     margin: 8px 16px 0 16px;
   }
 }
-.header__nav-container__logo {
+.header-nav__logo {
   width: 30%;
   height: 70px;
 }
-.header__nav-container__sp-3line-bar {
+.header-nav__sp-3line-bar {
   width: 50px;
 }
-.header__nav-container__sp-3line-bar__line-bar {
+.header-nav__sp-3line-bar--line {
   width: 60%;
   margin: 20% auto;
   border: 1px solid #E2001B;
 }
-.header__top-container {
+.header-top-container {
   margin: 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 @media screen and (max-width: 500px) {
-  .header__top-container {
+  .header-top-container {
     margin: 8px 16px;
     gap: 16px;
   }
 }
-.header__top-container__h3 {
+.header-top-container__h3 {
   color: #E2001B;
 }
 @media screen and (max-width: 500px) {
-  .header__top-container__h3 .br-sp {
+  .header-top-container__h3 .br-sp {
     display: block;
   }
 }
-.header__top-container__h1 {
+.header-top-container__h1 {
   font-size: 36px;
 }
 @media screen and (max-width: 800px) {
-  .header__top-container__h1 .br-tb {
+  .header-top-container__h1 .br-tb {
     display: block;
   }
 }
 @media screen and (max-width: 500px) {
-  .header__top-container__h1 .br-sp {
+  .header-top-container__h1 .br-sp {
     display: block;
   }
 }
-.header__main-img {
+.header-img {
   width: 100%;
 }
-.header__bottom-container {
+.header-bottom-container {
   margin: 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 @media screen and (max-width: 500px) {
-  .header__bottom-container {
+  .header-bottom-container {
     margin: 8px 16px;
     gap: 16px;
   }
 }
-.header__bottom-container__h4 {
+.header-bottom-container__h4 {
   color: #6d6d6d;
 }
 @media screen and (max-width: 500px) {
-  .header__bottom-container__h4 {
+  .header-bottom-container__h4 {
     font-size: 20px;
   }
 }
 @media screen and (max-width: 500px) {
-  .header__bottom-container__h4 .br-sp {
+  .header-bottom-container__h4 .br-sp {
     display: block;
   }
 }
-.header__bottom-container__img-1 {
+.header-bottom-container__img {
   width: 80%;
 }
 @media screen and (max-width: 500px) {
-  .header__bottom-container__img-1 {
+  .header-bottom-container__img {
     width: 100%;
   }
 }
-.header__btn {
+.header-btn {
   background-color: #F1B007;
   width: 100%;
   text-align: center;
   padding: 8px 0;
 }
-.header__btn__p {
+.header-btn__p {
   font-size: 12px;
 }
 

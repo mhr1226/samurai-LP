@@ -14,10 +14,12 @@ h3{
 }
 // h4は16px
 
-.header{
 
-  &__nav-container{
-    margin:$space-16 $space-24 0 $space-24;
+// header:BEM修正テスト
+
+.header{
+  &-nav{
+  margin:$space-16 $space-24 0 $space-24;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -31,20 +33,18 @@ h3{
       height:70px;
     }
 
-
     &__sp-3line-bar{
       width:50px;
 
-      &__line-bar{
+      &--line{
         width:60%;
         margin:20% auto;
         border:1px solid $red;
       }
     }
-    
-  }
+}
 
-  &__top-container{
+  &-top-container{
     margin:$space-16 $space-24;
     display:flex;
     flex-direction:column;
@@ -54,6 +54,7 @@ h3{
       margin:$space-8 $space-16;
       gap:$space-16;
     }
+
     &__h3{
       color:$red;
       @include br-sp();
@@ -66,44 +67,44 @@ h3{
 
       @include br-sp();
     }
+}
+
+&-img{
+  width:100%;
+}
+
+&-bottom-container{
+  margin:$space-16 $space-24;
+  display:flex;
+  flex-direction:column;
+  gap:$space-24;
+
+  @include media(500px){
+    margin:$space-8 $space-16;
+    gap:$space-16;
   }
 
-  &__main-img{
-    width:100%;
+  &__h4{
+    color:$dark-gray;
+
+    @include media-sp(){
+      font-size:$font-20;
+    }
+
+    @include br-sp();
   }
 
-  &__bottom-container{
-    margin:$space-16 $space-24;
-    display:flex;
-    flex-direction:column;
-    gap:$space-24;
+  &__img{
+    width:80%;
 
     @include media(500px){
-      margin:$space-8 $space-16;
-      gap:$space-16;
-    }
-
-    &__h4{
-      color:$dark-gray;
-
-      @include media-sp(){
-        font-size:$font-20;
-      }
-
-      @include br-sp();
-    }
-
-    &__img-1{
-      width:80%;
-
-      @include media(500px){
-        width:100%;
-      }
+      width:100%;
     }
   }
+}
 
-  &__btn{
-    background-color:$yellow;
+&-btn{
+  background-color:$yellow;
     width:100%;
     text-align:center;
     padding:$space-8 0;
@@ -111,8 +112,12 @@ h3{
     &__p{
       font-size:$font-12;
     }
-  }
+
 }
+}
+
+
+
 
 .main{
   /*オーダーメイド*/
