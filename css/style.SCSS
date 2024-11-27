@@ -1,7 +1,7 @@
 @use "../../../default_mixin_setting/main_mixin" as *;
 @use "default-setting" as *;
 
-body{
+.l-body{
   font-family:"Noto Sans JP";
 }
 
@@ -17,8 +17,7 @@ h3{
 
 // header:BEM修正テスト
 
-.header{
-  &-nav{
+.b-header-nav{
   margin:$space-16 $space-24 0 $space-24;
     display:flex;
     justify-content:space-between;
@@ -42,9 +41,9 @@ h3{
         border:1px solid $red;
       }
     }
-}
+  }
 
-  &-top-container{
+  .b-header-top-container{
     margin:$space-16 $space-24;
     display:flex;
     flex-direction:column;
@@ -67,13 +66,13 @@ h3{
 
       @include br-sp();
     }
-}
+  }
 
-&-img{
+  .b-header-img{
   width:100%;
-}
+  }
 
-&-bottom-container{
+  .b-header-bottom-container{
   margin:$space-16 $space-24;
   display:flex;
   flex-direction:column;
@@ -101,9 +100,9 @@ h3{
       width:100%;
     }
   }
-}
+  }
 
-&-btn{
+  .b-header-btn{
   background-color:$yellow;
     width:100%;
     text-align:center;
@@ -113,15 +112,10 @@ h3{
       font-size:$font-12;
     }
 
-}
-}
+  } 
 
-
-
-
-.main{
-  /*オーダーメイド*/
-  &__order-made-container{
+  // オーダーメイド：BEM移行テスト
+  .l-order-made{
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -133,15 +127,16 @@ h3{
       gap:$space-16;
       margin:$space-16 $space-16 $space-24 $space-16;
     }
+  }
 
-    &__top-content{
+    .b-order-made-top-content{
       
       &__h2{
         @include br-sp();
       }
     }
 
-    &__main-content{
+    .l-order-made-main-container{
       background-color:$light-gray;
       display:flex;
       flex-direction:column;
@@ -150,8 +145,9 @@ h3{
       @include media(500px){
         gap:$space-16;
       }
+    }
 
-      &__head-content{
+      .b-order-made-head-content{
       display:flex;
       flex-direction:column;
       gap:$space-16;
@@ -169,15 +165,97 @@ h3{
         justify-content:center;
         align-items:center;
         gap:$space-8;
-        &__img{
+
+        &-img{
         width:10%;
       }
 
-      &__p{
+      &-p{
         font-size:$font-20;
       }
       }
     }
+
+    .b-order-made-process-content{
+      margin:0 $space-36 $space-24 $space-36;
+      display:flex;
+      flex-direction:column;
+      gap:$space-16;
+
+      @include media(500px){
+        margin:0 $space-24 $space-16 $space-24;
+        gap:$space-8;
+      }
+
+      &__img1{
+        width:75%;
+        margin:0 auto;
+        @include media(480px){
+          width:100%;
+        }
+      }
+
+      &__p1{
+        font-weight:bold;
+
+        @include br-tb();
+      }
+
+      &__p2{
+        font-weight:bold;
+        color:$red;
+      }
+
+      &__allow-box{
+        @include flex;
+        gap:$space-8;
+
+
+        &-p{
+          font-size:$font-16;
+          font-weight:bold;
+          @include media-sp{
+            font-size:$font-12;
+          }
+        }
+      }
+
+      &__table{
+        border-spacing:0 $space-8;
+
+        @include media-sp{
+          border-spacing:0;
+        }
+        &-tr{
+
+          &-td1,&-td2{
+            padding:$space-12 $space-8;
+            @include media-sp{
+              padding:$space-8 $space-4;
+              display:block;
+              @include br-sp;
+            }
+          }
+          &-td1{
+            background-color:$dark-red;
+            color:$white;
+          }
+
+          &-td2{
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+
+
+.main{
+  /*オーダーメイド*/
+  // 移行済
+  &__order-made-container{
+
+    &__main-content{
 
     &__process-content{
       margin:0 $space-36 $space-24 $space-36;

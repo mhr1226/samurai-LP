@@ -55,7 +55,7 @@ input, button, textarea, select {
     scroll-behavior: auto !important;
   }
 }
-body {
+.l-body {
   font-family: "Noto Sans JP";
 }
 
@@ -67,114 +67,113 @@ h3 {
   font-size: 20px;
 }
 
-.header-nav {
+.b-header-nav {
   margin: 16px 24px 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 @media screen and (max-width: 500px) {
-  .header-nav {
+  .b-header-nav {
     margin: 8px 16px 0 16px;
   }
 }
-.header-nav__logo {
+.b-header-nav__logo {
   width: 30%;
   height: 70px;
 }
-.header-nav__sp-3line-bar {
+.b-header-nav__sp-3line-bar {
   width: 50px;
 }
-.header-nav__sp-3line-bar--line {
+.b-header-nav__sp-3line-bar--line {
   width: 60%;
   margin: 20% auto;
   border: 1px solid #E2001B;
 }
-.header-top-container {
+
+.b-header-top-container {
   margin: 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 @media screen and (max-width: 500px) {
-  .header-top-container {
+  .b-header-top-container {
     margin: 8px 16px;
     gap: 16px;
   }
 }
-.header-top-container__h3 {
+.b-header-top-container__h3 {
   color: #E2001B;
 }
 @media screen and (max-width: 500px) {
-  .header-top-container__h3 .br-sp {
+  .b-header-top-container__h3 .br-sp {
     display: block;
   }
 }
-.header-top-container__h1 {
+.b-header-top-container__h1 {
   font-size: 36px;
 }
 @media screen and (max-width: 800px) {
-  .header-top-container__h1 .br-tb {
+  .b-header-top-container__h1 .br-tb {
     display: block;
   }
 }
 @media screen and (max-width: 500px) {
-  .header-top-container__h1 .br-sp {
+  .b-header-top-container__h1 .br-sp {
     display: block;
   }
 }
-.header-img {
+
+.b-header-img {
   width: 100%;
 }
-.header-bottom-container {
+
+.b-header-bottom-container {
   margin: 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 @media screen and (max-width: 500px) {
-  .header-bottom-container {
+  .b-header-bottom-container {
     margin: 8px 16px;
     gap: 16px;
   }
 }
-.header-bottom-container__h4 {
+.b-header-bottom-container__h4 {
   color: #6d6d6d;
 }
 @media screen and (max-width: 500px) {
-  .header-bottom-container__h4 {
+  .b-header-bottom-container__h4 {
     font-size: 20px;
   }
 }
 @media screen and (max-width: 500px) {
-  .header-bottom-container__h4 .br-sp {
+  .b-header-bottom-container__h4 .br-sp {
     display: block;
   }
 }
-.header-bottom-container__img {
+.b-header-bottom-container__img {
   width: 80%;
 }
 @media screen and (max-width: 500px) {
-  .header-bottom-container__img {
+  .b-header-bottom-container__img {
     width: 100%;
   }
 }
-.header-btn {
+
+.b-header-btn {
   background-color: #F1B007;
   width: 100%;
   text-align: center;
   padding: 8px 0;
 }
-.header-btn__p {
+.b-header-btn__p {
   font-size: 12px;
 }
 
-.main {
-  /*オーダーメイド*/
-  /*サービス*/
-  /*サポート*/
-}
-.main__order-made-container {
+.l-order-made {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,53 +182,140 @@ h3 {
   margin: 24px 24px 36px 24px;
 }
 @media screen and (max-width: 500px) {
-  .main__order-made-container {
+  .l-order-made {
     gap: 16px;
     margin: 16px 16px 24px 16px;
   }
 }
+
 @media screen and (max-width: 500px) {
-  .main__order-made-container__top-content__h2 .br-sp {
+  .b-order-made-top-content__h2 .br-sp {
     display: block;
   }
 }
-.main__order-made-container__main-content {
+
+.l-order-made-main-container {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 @media screen and (max-width: 500px) {
-  .main__order-made-container__main-content {
+  .l-order-made-main-container {
     gap: 16px;
   }
 }
-.main__order-made-container__main-content__head-content {
+
+.b-order-made-head-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 @media screen and (max-width: 500px) {
-  .main__order-made-container__main-content__head-content {
+  .b-order-made-head-content {
     gap: 8px;
   }
 }
 @media screen and (max-width: 500px) {
-  .main__order-made-container__main-content__head-content__h3 .br-sp {
+  .b-order-made-head-content__h3 .br-sp {
     display: block;
   }
 }
-.main__order-made-container__main-content__head-content__user-content {
+.b-order-made-head-content__user-content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
-.main__order-made-container__main-content__head-content__user-content__img {
+.b-order-made-head-content__user-content-img {
   width: 10%;
 }
-.main__order-made-container__main-content__head-content__user-content__p {
+.b-order-made-head-content__user-content-p {
   font-size: 20px;
+}
+
+.b-order-made-process-content {
+  margin: 0 36px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media screen and (max-width: 500px) {
+  .b-order-made-process-content {
+    margin: 0 24px 16px 24px;
+    gap: 8px;
+  }
+}
+.b-order-made-process-content__img1 {
+  width: 75%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .b-order-made-process-content__img1 {
+    width: 100%;
+  }
+}
+.b-order-made-process-content__p1 {
+  font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+  .b-order-made-process-content__p1 .br-tb {
+    display: block;
+  }
+}
+.b-order-made-process-content__p2 {
+  font-weight: bold;
+  color: #E2001B;
+}
+.b-order-made-process-content__allow-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.b-order-made-process-content__allow-box-p {
+  font-size: 16px;
+  font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+  .b-order-made-process-content__allow-box-p {
+    font-size: 12px;
+  }
+}
+.b-order-made-process-content__table {
+  border-spacing: 0 8px;
+}
+@media screen and (max-width: 500px) {
+  .b-order-made-process-content__table {
+    border-spacing: 0;
+  }
+}
+.b-order-made-process-content__table-tr-td1, .b-order-made-process-content__table-tr-td2 {
+  padding: 12px 8px;
+}
+@media screen and (max-width: 500px) {
+  .b-order-made-process-content__table-tr-td1, .b-order-made-process-content__table-tr-td2 {
+    padding: 8px 4px;
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  .b-order-made-process-content__table-tr-td1 .br-sp, .b-order-made-process-content__table-tr-td2 .br-sp {
+    display: block;
+  }
+}
+.b-order-made-process-content__table-tr-td1 {
+  background-color: #B40015;
+  color: #ffffff;
+}
+.b-order-made-process-content__table-tr-td2 {
+  background-color: #ffffff;
+}
+
+.main {
+  /*オーダーメイド*/
+  /*サービス*/
+  /*サポート*/
 }
 .main__order-made-container__main-content__process-content {
   margin: 0 36px 24px 36px;
