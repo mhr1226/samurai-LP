@@ -13,6 +13,14 @@ h3{
   font-size:$font-20;
 }
 // h4は16px
+.u-br-sp{
+  @include br-sp;
+}
+
+.u-br-tb{
+  @include br-tb;
+
+}
 
 
 // header:BEM修正テスト
@@ -32,7 +40,7 @@ h3{
       height:70px;
     }
 
-    &__sp-3line-bar{
+    &__sp-bar{
       width:50px;
 
       &--line{
@@ -41,9 +49,9 @@ h3{
         border:1px solid $red;
       }
     }
-  }
+}
 
-  .b-header-top-container{
+.b-header-top{
     margin:$space-16 $space-24;
     display:flex;
     flex-direction:column;
@@ -56,23 +64,18 @@ h3{
 
     &__h3{
       color:$red;
-      @include br-sp();
     }
 
     &__h1{
       font-size:$font-36;
-
-      @include br-tb();
-
-      @include br-sp();
     }
-  }
+}
 
-  .b-header-img{
+.b-header-img{
   width:100%;
-  }
+}
 
-  .b-header-bottom-container{
+.b-header-bottom{
   margin:$space-16 $space-24;
   display:flex;
   flex-direction:column;
@@ -89,8 +92,6 @@ h3{
     @include media-sp(){
       font-size:$font-20;
     }
-
-    @include br-sp();
   }
 
   &__img{
@@ -100,9 +101,9 @@ h3{
       width:100%;
     }
   }
-  }
+}
 
-  .b-header-btn{
+.b-header-btn{
   background-color:$yellow;
     width:100%;
     text-align:center;
@@ -112,10 +113,10 @@ h3{
       font-size:$font-12;
     }
 
-  } 
+} 
 
-  // オーダーメイド：BEM移行テスト
-  .l-order-made{
+// オーダーメイド：BEM移行テスト
+.l-order-made{
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -127,16 +128,9 @@ h3{
       gap:$space-16;
       margin:$space-16 $space-16 $space-24 $space-16;
     }
-  }
+}
 
-    .b-order-made-top-content{
-      
-      &__h2{
-        @include br-sp();
-      }
-    }
-
-    .l-order-made-main-container{
+.l-order-made-main{
       background-color:$light-gray;
       display:flex;
       flex-direction:column;
@@ -145,19 +139,15 @@ h3{
       @include media(500px){
         gap:$space-16;
       }
-    }
+}
 
-      .b-order-made-head-content{
+.b-order-made-main-head{
       display:flex;
       flex-direction:column;
       gap:$space-16;
 
       @include media(500px){
         gap:$space-8;
-      }
-
-      &__h3{
-        @include br-sp;
       }
 
       &__user-content{
@@ -167,16 +157,16 @@ h3{
         gap:$space-8;
 
         &-img{
-        width:10%;
-      }
+          width:10%;
+        }
 
-      &-p{
-        font-size:$font-20;
+        &-p{
+          font-size:$font-20;
+        }
       }
-      }
-    }
+}
 
-    .b-order-made-process-content{
+.b-order-made-process-content{
       margin:0 $space-36 $space-24 $space-36;
       display:flex;
       flex-direction:column;
@@ -197,8 +187,6 @@ h3{
 
       &__p1{
         font-weight:bold;
-
-        @include br-tb();
       }
 
       &__p2{
@@ -233,7 +221,6 @@ h3{
             @include media-sp{
               padding:$space-8 $space-4;
               display:block;
-              @include br-sp;
             }
           }
           &-td1{
@@ -246,7 +233,7 @@ h3{
           }
         }
       }
-    }
+}
 
 
 
@@ -257,37 +244,35 @@ h3{
 
     &__main-content{
 
-    &__process-content{
-      margin:0 $space-36 $space-24 $space-36;
-      display:flex;
-      flex-direction:column;
-      gap:$space-16;
+      &__process-content{
+        margin:0 $space-36 $space-24 $space-36;
+        display:flex;
+        flex-direction:column;
+        gap:$space-16;
 
-      @include media(500px){
-        margin:0 $space-24 $space-16 $space-24;
-        gap:$space-8;
-      }
+        @include media(500px){
+          margin:0 $space-24 $space-16 $space-24;
+          gap:$space-8;
+        }
 
-      &__img1{
+        &__img1{
         width:75%;
         margin:0 auto;
         @include media(480px){
           width:100%;
         }
-      }
+        }
 
-      &__p1{
+        &__p1{
         font-weight:bold;
+        }
 
-        @include br-tb();
-      }
-
-      &__p2{
+        &__p2{
         font-weight:bold;
         color:$red;
-      }
+        }
 
-      &-allow-box{
+        &-allow-box{
         @include flex;
         gap:$space-8;
 
@@ -299,9 +284,9 @@ h3{
             font-size:$font-12;
           }
         }
-      }
+        }
 
-      &-table{
+        &-table{
         border-spacing:0 $space-8;
 
         @include media-sp{
@@ -314,7 +299,6 @@ h3{
             @include media-sp{
               padding:$space-8 $space-4;
               display:block;
-              @include br-sp;
             }
           }
           &-td1{
@@ -326,11 +310,8 @@ h3{
             background-color: $white;
           }
         }
+        }
       }
-    }
-
-    
-      
     }
   }
 
@@ -364,9 +345,6 @@ h3{
 
     &__h2{
       color:$white;
-
-    @include br-tb();
-    @include br-sp();
     }
 
     &__main-container{
@@ -479,8 +457,6 @@ h3{
               font-size:12px;
               text-align:center;
               color:white;
-              @include br-tb;
-              @include br-sp;
             }
           }
 
@@ -592,8 +568,6 @@ h3{
               font-size:12px;
               text-align:center;
               color:white;
-              @include br-tb;
-              @include br-sp;
             }
           }
           
