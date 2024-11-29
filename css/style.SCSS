@@ -23,7 +23,7 @@ h3{
 }
 
 
-// header:BEM修正テスト
+// header:BEM修正テスト：済
 
 .b-header-nav{
   margin:$space-16 $space-24 0 $space-24;
@@ -57,7 +57,7 @@ h3{
     flex-direction:column;
     gap:$space-24;
 
-    @include  media(500px){
+    @include  media-sp(){
       margin:$space-8 $space-16;
       gap:$space-16;
     }
@@ -81,7 +81,7 @@ h3{
   flex-direction:column;
   gap:$space-24;
 
-  @include media(500px){
+  @include media-sp(){
     margin:$space-8 $space-16;
     gap:$space-16;
   }
@@ -97,7 +97,7 @@ h3{
   &__img{
     width:80%;
 
-    @include media(500px){
+    @include media-sp(){
       width:100%;
     }
   }
@@ -116,6 +116,7 @@ h3{
 } 
 
 // オーダーメイド：BEM移行テスト:済
+// オーダーメイド全体の枠組み
 .l-order-made{
     display:flex;
     flex-direction:column;
@@ -124,29 +125,29 @@ h3{
     text-align:center;
     margin:$space-24 $space-24 $space-36 $space-24;
 
-    @include media(500px){
+    @include media-sp(){
       gap:$space-16;
       margin:$space-16 $space-16 $space-24 $space-16;
     }
 }
-
+// オーダーメイド：メインコンテナ（グレー背景部分）
 .l-order-made-main{
       background-color:$light-gray;
       display:flex;
       flex-direction:column;
       gap:$space-24;
 
-      @include media(500px){
+      @include media-sp(){
         gap:$space-16;
       }
 }
-
+// メインコンテナ内見出し
 .b-order-made-main-head{
       display:flex;
       flex-direction:column;
       gap:$space-16;
 
-      @include media(500px){
+      @include media-sp(){
         gap:$space-8;
       }
 
@@ -165,67 +166,199 @@ h3{
         }
       }
 }
-
-.b-order-made-main-process-content{
+// カリキュラムコンテナ
+.l-order-made-main-process-content{
       margin:0 $space-36 $space-24 $space-36;
       display:flex;
       flex-direction:column;
       gap:$space-16;
 
-      @include media(500px){
+      @include media-sp(){
         margin:0 $space-24 $space-16 $space-24;
         gap:$space-8;
       }
+}
 
-      &__table{
+// カリキュラムテーブル
+.b-order-made-process-table{
+  // テーブル全体のCSS
         border-spacing:0 $space-8;
+        background-color:$white;
+        
 
         @include media-sp{
           border-spacing:0;
         }
-        &-tr{
 
-          &-td1,&-td2{
-            padding:$space-12 $space-8;
+        // td共通CSS
+        td{
+          padding:$space-12 $space-8;
             @include media-sp{
               padding:$space-8 $space-4;
               display:block;
             }
-          }
-          &-td1{
-            background-color:$dark-red;
-            color:$white;
-          }
-
-          &-td2{
-            background-color: $white;
-          }
         }
-      }
 
-      &__p1{
-        font-weight:bold;
-      }
+}
 
-      &__p2{
-        font-weight:bold;
-        color:$red;
-      }
+// カリキュラム：月経過（赤背景）
+.b-order-made-process-month{
+  background-color:$dark-red;
+  color:$white;
 
-      &__allow-box{
-        @include flex;
+}
+
+
+// カリキュラム：修了後
+.b-order-made-process-allow{
+  @include flex;
         gap:$space-8;
 
-
-        &-p{
+        &__p{
           font-size:$font-16;
           font-weight:bold;
           @include media-sp{
             font-size:$font-12;
           }
         }
-      }
 }
+
+// カリキュラム：修了後テキスト
+.b-order-made-process-text{
+  font-weight:bold;
+
+  &:nth-of-type(2){
+    color:$red;
+  }
+}
+
+// サービス：BEM移行テスト
+.l-service{
+  background-color:$dark-red;
+  padding:$space-24;
+  display:flex;
+  flex-direction:column;
+  gap:$space-24;
+
+  @include media-sp(){
+    padding:$space-16;
+    gap:$space-16;
+  }
+
+  
+}
+
+.b-service-heading{
+  // 余白調整用
+  @include flex-column;
+  gap:$space-24;
+
+  @include media-sp(){
+    gap:$space-16;
+  }
+
+  &__p{
+    color:$white;
+    text-align:left;
+
+    &--white-line{
+      display:block;
+      margin-top:$space-8;
+      width:90px;
+      height:1px;
+      background-color:$white;
+    }
+  }
+
+  &__h2{
+    color:$white;
+  }
+}
+
+// メインテキスト＋画像
+.b-service-main-content{
+  @include flex-column;
+  gap:$space-24;
+
+  @include media-sp(){
+    gap:$space-16;
+  }
+
+  &__p{
+    color:$white;
+    line-height:1.75rem;
+  }
+
+  &__img{
+    width:50%;
+    margin:0 auto;
+  }
+}
+
+.l-service-bar-container{
+  @include flex-column;
+  gap:12px;
+}
+
+ // 上下のカリキュラムバーをまとめたコンテナ
+.b-service-bar1{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:$space-24;
+    position:relative;
+
+    @include media-sp{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:$space-12;
+    }
+
+  &-head{
+    width:25%;
+
+    @include media-sp{
+      width:70%;
+    }
+
+    &__p{
+
+      background-color:$white;
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+      gap:$space-4;
+      text-align:center;
+      font-weight:bold;
+      font-size:clamp(12px,2vw,16px);
+      
+      @include media-sp{
+        justify-content:center;
+      } 
+        &-triangle{
+          @include triangle(
+            inline-block,
+            clamp(12px,2vw,16px),
+            clamp(12px,2vw,24px),
+            black
+            );
+          @include media-sp{
+            clip-path:polygon(
+              0 0,
+              100% 0,
+              50% 100%
+              );
+          
+          }
+        } 
+      }
+    }
+  }
+
+
+
+
+
 
 
 
@@ -240,7 +373,7 @@ h3{
     flex-direction:column;
     gap:$space-24;
 
-    @include media(500px){
+    @include media-sp(){
       padding:$space-16;
       gap:$space-16;
     }
@@ -264,38 +397,36 @@ h3{
     }
 
     &__main-container{
-      display:flex;
-      flex-direction:column;
-      gap:$space-24;
+      // display:flex;
+      // flex-direction:column;
+      // // gap:$space-24;
 
-      @include media(500px){
-        gap:$space-16;
-      }
-      &__p{
-        color:$white;
-        line-height:1.75rem;
+      // // @include media-sp(){
+      // //   gap:$space-16;
+      // // }
 
-        &__span{
-          display:block;
-          margin-top:$space-24;
 
-          @include media(500px){
-            margin-top:$space-16;
-          }
-        }
-      }
 
-      &__img1{
-      width:50%;
-      margin:0 auto;
-    }
+    //   &__p{
+    //     color:$white;
+    //     line-height:1.75rem;
+
+    //   }
+
+    //   &__img1{
+    //   width:50%;
+    //   margin:0 auto;
+    // }
+
 
       // カリキュラムセクション
 
+      // カリキュラムバー全体セクション
       &__bar-sec{
         @include flex-column;
         gap:12px;
 
+        // 上下のカリキュラムバーをまとめたコンテナ
         &__bar{
           display:flex;
           justify-content:space-between;
@@ -566,7 +697,7 @@ h3{
     gap:$space-24;
     margin:$space-36 $space-24;
 
-    @include media(500px){
+    @include media-sp(){
       margin:$space-24 $space-16;
     }
 
@@ -579,7 +710,7 @@ h3{
       @include flex-column();
       gap:$space-24;
 
-      @include media(500px){
+      @include media-sp(){
         gap:$space-16;
       }
       &__h3{
@@ -595,7 +726,7 @@ h3{
         }
 
         &__span2{
-          @include media(500px){
+          @include media-sp(){
             display:block;
           }
         }
@@ -603,7 +734,7 @@ h3{
 
       &__h4{
         &__span{
-          @include media(500px){
+          @include media-sp(){
             display:block;
           }
         }
@@ -616,7 +747,7 @@ h3{
           &__img{
             width:100%;
 
-            @include media(500px){
+            @include media-sp(){
               width:90%;
             }
           }
