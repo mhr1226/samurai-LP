@@ -13,10 +13,13 @@ h3{
   font-size:$font-20;
 }
 // h4は16px
+
+/*スマホ用改行*/
 .u-br-sp{
   @include br-sp;
 }
 
+/*タブレット用改行*/
 .u-br-tb{
   @include br-tb;
 
@@ -25,6 +28,7 @@ h3{
 
 // header:BEM修正テスト：済
 
+/*ナビゲーション*/
 .b-header-nav{
   margin:$space-16 $space-24 0 $space-24;
     display:flex;
@@ -50,7 +54,7 @@ h3{
       }
     }
 }
-
+/*トップテキスト*/
 .b-header-top{
     margin:$space-16 $space-24;
     display:flex;
@@ -70,11 +74,12 @@ h3{
       font-size:$font-36;
     }
 }
-
+/*トップ画像*/
 .b-header-img{
   width:100%;
 }
 
+/*画像下：テキスト*/
 .b-header-bottom{
   margin:$space-16 $space-24;
   display:flex;
@@ -103,6 +108,7 @@ h3{
   }
 }
 
+/*ボタン*/
 .b-header-btn{
   background-color:$yellow;
     width:100%;
@@ -116,7 +122,7 @@ h3{
 } 
 
 // オーダーメイド：BEM移行テスト:済
-// オーダーメイド全体の枠組み
+/* オーダーメイド全体の枠組み*/
 .l-order-made{
     display:flex;
     flex-direction:column;
@@ -130,7 +136,7 @@ h3{
       margin:$space-16 $space-16 $space-24 $space-16;
     }
 }
-// オーダーメイド：メインコンテナ（グレー背景部分）
+/* オーダーメイド：メインコンテナ（グレー背景部分）*/
 .l-order-made-main{
       background-color:$light-gray;
       display:flex;
@@ -141,7 +147,7 @@ h3{
         gap:$space-16;
       }
 }
-// メインコンテナ内見出し
+/* メインコンテナ内見出し*/
 .b-order-made-main-head{
       display:flex;
       flex-direction:column;
@@ -151,7 +157,9 @@ h3{
         gap:$space-8;
       }
 
+      
       &__user-content{
+        /*人物画像＋テキスト*/
         display:flex;
         justify-content:center;
         align-items:center;
@@ -166,7 +174,7 @@ h3{
         }
       }
 }
-// カリキュラムコンテナ
+/* カリキュラムコンテナ*/
 .l-order-made-main-process-content{
       margin:0 $space-36 $space-24 $space-36;
       display:flex;
@@ -179,9 +187,9 @@ h3{
       }
 }
 
-// カリキュラムテーブル
+/* カリキュラムテーブル*/
 .b-order-made-process-table{
-  // テーブル全体のCSS
+  /* テーブル全体のCSS*/
         border-spacing:0 $space-8;
         background-color:$white;
         
@@ -190,8 +198,8 @@ h3{
           border-spacing:0;
         }
 
-        // td共通CSS
         td{
+          /* td共通CSS*/
           padding:$space-12 $space-8;
             @include media-sp{
               padding:$space-8 $space-4;
@@ -201,7 +209,7 @@ h3{
 
 }
 
-// カリキュラム：月経過（赤背景）
+/* カリキュラム：月経過（赤背景）*/
 .b-order-made-process-month{
   background-color:$dark-red;
   color:$white;
@@ -209,7 +217,7 @@ h3{
 }
 
 
-// カリキュラム：修了後
+/* カリキュラム：修了後＋矢印*/
 .b-order-made-process-allow{
   @include flex;
         gap:$space-8;
@@ -223,7 +231,7 @@ h3{
         }
 }
 
-// カリキュラム：修了後テキスト
+/*カリキュラム：修了後テキスト*/
 .b-order-made-process-text{
   font-weight:bold;
 
@@ -233,6 +241,7 @@ h3{
 }
 
 // サービス：BEM移行テスト
+/*サービス全体*/
 .l-service{
   background-color:$dark-red;
   padding:$space-24;
@@ -249,7 +258,7 @@ h3{
 }
 
 .b-service-heading{
-  // 余白調整用
+  /*見出しコンテナ （余白調整用） */
   @include flex-column;
   gap:$space-24;
 
@@ -257,11 +266,13 @@ h3{
     gap:$space-16;
   }
 
+  /*トップテキスト*/
   &__p{
     color:$white;
     text-align:left;
 
     &--white-line{
+      /*白線*/
       display:block;
       margin-top:$space-8;
       width:90px;
@@ -275,8 +286,9 @@ h3{
   }
 }
 
-// メインテキスト＋画像
+/* メインテキスト＋画像コンテナ*/
 .b-service-main-content{
+  /*余白調整用*/
   @include flex-column;
   gap:$space-24;
 
@@ -295,12 +307,14 @@ h3{
   }
 }
 
+/*カリキュラムバー全体レイアウト*/
 .l-service-bar-container{
   @include flex-column;
   gap:12px;
 }
 
- // 上下のカリキュラムバーをまとめたコンテナ
+/* 1本目:上下のカリキュラムバーをまとめたコンテナ*/
+
 .b-service-bar1{
     display:flex;
     justify-content:space-between;
@@ -314,8 +328,9 @@ h3{
       gap:$space-12;
     }
 
-    // 白背景：見出し
+    
   &-head{
+    /* 白背景：見出し*/
     width:25%;
 
     @include media-sp{
@@ -336,26 +351,33 @@ h3{
       @include media-sp{
         justify-content:center;
       } 
-        &-triangle{
-          @include triangle(
+
+      &::after{
+        /*黒矢印*/
+        content:'';
+        @include triangle(
             inline-block,
             clamp(12px,2vw,16px),
             clamp(12px,2vw,24px),
             black
             );
+            
           @include media-sp{
+            /*下向きに変更*/
             clip-path:polygon(
               0 0,
               100% 0,
               50% 100%
               );
-          
           }
-        } 
+      } 
       }
     }
-    // カリキュラムバーメイン
+
+
+    
     &-main{
+      /* カリキュラムバーメイン */
       width:70%;
       position:relative;
       @include flex-column;
@@ -364,8 +386,9 @@ h3{
       @include media-sp{
         width:100%;
       }
-      // 白テキスト：見出し
+      
       &-head{
+        /* 白テキスト：見出しコンテナ */
         display:flex;
         justify-content:space-around;
 
@@ -378,8 +401,9 @@ h3{
         }
       }
 
-      // バー本体部分（黄色・白背景）
+      
       &-liner{
+        /* バー本体部分（黄色・白背景） */
         position:relative;
         height:50px;
         background:linear-gradient(
@@ -392,25 +416,24 @@ h3{
         align-items:center;
 
 
-        // 50%の部分
+        
         &__p{
+          /* 50%の部分 */
           font-weight:bold;
 
+          
           &::after{
+            /* % */
             content:'%';
             font-size:$font-12;
             padding-left:1px;
           }
-        
-          // &-span{
-          //   font-size:12px;
-          //   padding-left:1px;
-          // }
         }
       }
 
-      // 作品完成
+      
       &__sub-span{
+        /* 作品完成 */
         color:$white;
         font-size:12px;
         position:absolute;
@@ -418,16 +441,18 @@ h3{
         bottom:-20%;
       }
 
-      // 矢印部分
+      
       &__allow{
+        /* 矢印部分 */
         // 矢印：線のミックスイン
         @include allow-line(black,90%,2px);
         position:absolute;
         bottom:5%;
         right:0;
 
-        // 矢印：先端部分
+        
         &::after{
+          /* 矢印：先端部分 */
           content:'';
           // 矢印：先端のミックスイン
           @include allow-triangle();
@@ -439,15 +464,162 @@ h3{
     }
   }
 
+  /* 2本目:上下のカリキュラムバーをまとめたコンテナ*/
+
+.b-service-bar2{
+
+  display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:$space-24;
+    position:relative;
+
+    @include media-sp{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:$space-12;
+    }
+
+    
+  &-head{
+    /* 白背景：見出し*/
+    width:25%;
+
+    @include media-sp{
+      width:70%;
+    }
+
+    &__p{
+
+      // background-color:$white;
+      color:$white;
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+      gap:$space-4;
+      text-align:center;
+      font-weight:bold;
+      font-size:clamp(12px,2vw,16px);
+      
+      @include media-sp{
+        justify-content:center;
+      } 
+
+      &::after{
+        /*黒矢印*/
+        content:'';
+        @include triangle(
+            inline-block,
+            clamp(12px,2vw,16px),
+            clamp(12px,2vw,24px),
+            $white
+            );
+            
+          @include media-sp{
+            /*下向きに変更*/
+            clip-path:polygon(
+              0 0,
+              100% 0,
+              50% 100%
+              );
+          }
+      } 
+      }
+    }
+
+
+    
+    &-main{
+      /* カリキュラムバーメイン */
+      width:70%;
+      position:relative;
+      @include flex-column;
+      gap:8px;
+
+      @include media-sp{
+        width:100%;
+      }
+      
+      &-head{
+        /* 白テキスト：見出しコンテナ */
+        display:flex;
+        justify-content:space-around;
+
+          
+        &__p{
+          width:50%;
+          font-size:12px;
+          text-align:center;
+          color:white;
+        }
+      }
+
+      
+      &-liner{
+        /* バー本体部分（黄色・白背景） */
+        position:relative;
+        height:50px;
+        background:linear-gradient(
+          to right,
+          $white 80%,
+          $yellow 20%
+          );
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+
+
+        
+        &__p{
+          /* 50%の部分 */
+          font-weight:bold;
+
+          
+          &::after{
+            /* % */
+            content:'%';
+            font-size:$font-12;
+            padding-left:1px;
+          }
+        }
+      }
+
+      
+      &__sub-span{
+        /* 作品完成 */
+        color:$white;
+        font-size:12px;
+        position:absolute;
+        right:10%;
+        bottom:-20%;
+      }
+
+      
+      &__allow{
+        /* 矢印部分 */
+        // 矢印：線のミックスイン
+        @include allow-line(black,90%,2px);
+        position:absolute;
+        bottom:5%;
+        right:0;
+
+        
+        &::after{
+          /* 矢印：先端部分 */
+          content:'';
+          // 矢印：先端のミックスイン
+          @include allow-triangle();
+        }
+      }
 
 
 
+    }
 
-
-
-
+}
+  // オーダーメイド 移行済
 .main{
-  /*オーダーメイド 移行済*/
+  
 
   /*サービス*/
   &__service{
