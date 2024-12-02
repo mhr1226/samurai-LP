@@ -1,6 +1,8 @@
 @use "../../../default_mixin_setting/main_mixin" as *;
 @use "default-setting" as *;
 
+/*共通CSSここから--------------*/
+
 .l-body{
   font-family:"Noto Sans JP";
 }
@@ -25,6 +27,10 @@ h3{
 
 }
 
+/*共通CSSここまで*/
+
+
+/*ヘッダーここから-------------*/
 
 // header:BEM修正テスト：済
 
@@ -121,7 +127,10 @@ h3{
 
 } 
 
-// オーダーメイド：BEM移行テスト:済
+/*ヘッダーここまで*/
+
+/*オーダーメイドここから----------------*/
+
 /* オーダーメイド全体の枠組み*/
 .l-order-made{
     display:flex;
@@ -240,7 +249,10 @@ h3{
   }
 }
 
-// サービス：BEM移行テスト
+/*オーダーメイドここまで*/
+
+/*サービスここから----------------*/
+
 /*サービス全体*/
 .l-service{
   background-color:$dark-red;
@@ -271,8 +283,9 @@ h3{
     color:$white;
     text-align:left;
 
-    &--white-line{
+    &::after{
       /*白線*/
+      content:'';
       display:block;
       margin-top:$space-8;
       width:90px;
@@ -432,7 +445,7 @@ h3{
       }
 
       
-      &__sub-span{
+      &-sub-span{
         /* 作品完成 */
         color:$white;
         font-size:12px;
@@ -442,7 +455,7 @@ h3{
       }
 
       
-      &__allow{
+      &-allow{
         /* 矢印部分 */
         // 矢印：線のミックスイン
         @include allow-line(black,90%,2px);
@@ -490,8 +503,6 @@ h3{
     }
 
     &__p{
-
-      // background-color:$white;
       color:$white;
       display:flex;
       justify-content:space-around;
@@ -506,7 +517,7 @@ h3{
       } 
 
       &::after{
-        /*黒矢印*/
+        /*白矢印*/
         content:'';
         @include triangle(
             inline-block,
@@ -547,6 +558,7 @@ h3{
 
           
         &__p{
+          /*見出しコンテナ内テキスト*/
           width:50%;
           font-size:12px;
           text-align:center;
@@ -569,24 +581,34 @@ h3{
         align-items:center;
 
 
-        
         &__p{
-          /* 50%の部分 */
+          /* pタグ共通部分 */
           font-weight:bold;
 
-          
           &::after{
             /* % */
             content:'%';
             font-size:$font-12;
             padding-left:1px;
           }
+
+          &:nth-of-type(1){
+            // 80の % 部分
+            position:absolute;
+            left:35%;
+          }
+
+          &:nth-of-type(2){
+            // 20の % 部分
+            position:absolute;
+            right:3%;
+          }
         }
       }
 
       
-      &__sub-span{
-        /* 作品完成 */
+      &-sub-span{
+        /* 右下テキスト：配置 */
         color:$white;
         font-size:12px;
         position:absolute;
@@ -594,8 +616,17 @@ h3{
         bottom:-20%;
       }
 
+      &-bottom-span{
+        /*左下テキスト：配置*/
+        font-size:8px;
+        color:white;
+        position:absolute;
+        bottom:-18%;
+        left:5%;
+      }
+
       
-      &__allow{
+      &-allow{
         /* 矢印部分 */
         // 矢印：線のミックスイン
         @include allow-line(black,90%,2px);
@@ -617,287 +648,14 @@ h3{
     }
 
 }
+
+/*サービスここまで*/
+
+
+  // ヘッダー 移行済
   // オーダーメイド 移行済
 .main{
   
-
-  /*サービス*/
-  &__service{
-    background-color:$dark-red;
-    padding:$space-24;
-    display:flex;
-    flex-direction:column;
-    gap:$space-24;
-
-    @include media-sp(){
-      padding:$space-16;
-      gap:$space-16;
-    }
-
-    &__p{
-
-      color:$white;
-      text-align:left;
-
-      &__span{
-        display:block;
-        margin-top:$space-8;
-        width:90px;
-        height:1px;
-        background-color:$white;
-      }
-    }
-
-    &__h2{
-      color:$white;
-    }
-
-    &__main-container{
-      // display:flex;
-      // flex-direction:column;
-      // // gap:$space-24;
-
-      // // @include media-sp(){
-      // //   gap:$space-16;
-      // // }
-
-
-
-    //   &__p{
-    //     color:$white;
-    //     line-height:1.75rem;
-
-    //   }
-
-    //   &__img1{
-    //   width:50%;
-    //   margin:0 auto;
-    // }
-
-
-      // カリキュラムセクション
-
-      // カリキュラムバー全体セクション
-      &__bar-sec{
-        @include flex-column;
-        gap:12px;
-
-        // 上下のカリキュラムバーをまとめたコンテナ
-        &__bar{
-          display:flex;
-          justify-content:space-between;
-          align-items:center;
-          padding:$space-24;
-          position:relative;
-
-          @include media-sp{
-            flex-direction:column;
-            align-items:flex-start;
-            gap:$space-12;
-          }
-
-          &__content-left{
-          width:25%;
-
-          @include media-sp{
-            width:70%;
-          }
-  
-          &-p{
-            background-color:$white;
-            display:flex;
-            justify-content:space-around;
-            align-items:center;
-            gap:$space-4;
-            text-align:center;
-            font-weight:bold;
-            font-size:clamp(12px,2vw,16px);
-          
-            @include media-sp{
-              justify-content:center;
-            }
-
-            &-br{
-              display:block;
-            }
-
-            &-span{
-              @include triangle(
-                inline-block,
-                clamp(12px,2vw,16px),
-                clamp(12px,2vw,24px),
-                black
-                );
-              @include media-sp{
-                clip-path:polygon(
-                  0 0,
-                  100% 0,
-                  50% 100%
-                  );
-              
-              }
-            }
-          }
-          // content-leftここまで
-        }
-        // content-rightここから
-        &__content-right{
-
-
-            &-allow{
-              // @include allow-line(black,90%,2px);
-              // position:absolute;
-              // bottom:5%;
-              // right:0;
-              
-              // &-span{
-              //   @include allow-triangle();
-              // }
-
-            }
-            // content-rightここまで
-        }
-
-        // content-left2ここから
-        &__content-left2{
-          width:25%;
-
-          @include media-sp{
-            width:70%;
-          }
-          color:white;
-
-          &-p{
-            display:flex;
-            justify-content:space-around;
-            align-items:center;
-            gap:$space-4;
-            text-align:center;
-            font-weight:bold;
-            font-size:clamp(12px,2vw,16px);
-            background-color:$dark-red;
-
-
-            @include media-sp{
-              justify-content:center;
-            }
-
-            &-span{
-              @include triangle(
-                inline-block,
-                clamp(12px,2vw,16px),
-                clamp(12px,2vw,24px),
-                // 黒を白に変える（後で）
-                $white
-                );
-              @include media-sp{
-                clip-path:polygon(
-                  0 0,
-                  100% 0,
-                  50% 100%
-                  );
-              }
-            }
-          }
-          // content-left2ここまで
-        }
-
-        // content-right2ここから
-        &__content-right2{
-          width:70%;
-          position:relative;
-          @include flex-column;
-          gap:8px;
-
-          @include media-sp{
-            width:100%;
-          }
-
-          &-heading{
-            display:flex;
-            justify-content:space-around;
-
-            &-p{
-              width:50%;
-              font-size:12px;
-              text-align:center;
-              color:white;
-            }
-          }
-          
-
-          &-liner{
-            position:relative;
-            height:50px;
-            background:linear-gradient(
-            to right,
-            $white 80%,
-            $yellow 20%
-            );
-            display:flex;
-            justify-content:space-around;
-            align-items:center;
-          
-            &-p1{
-              position:absolute;
-              left:35%;
-              font-weight:bold;
-
-              &-span{
-              font-size:12px;
-              padding-left:1px;
-              }
-            }
-
-            &-p2{
-              position:absolute;
-              right:3%;
-              font-weight:bold;
-
-              &-span{
-                font-size:12px;
-                padding-left:1px;
-                }
-            }
-          }
-
-          &-sub-span{
-            color:$white;
-            font-size:12px;
-            position:absolute;
-            right:10%;
-            bottom:-20%;
-          }
-
-          &-bottom-span{
-            font-size:8px;
-            color:white;
-            position:absolute;
-            bottom:-18%;
-            left:5%;
-          }
-
-          &-allow{
-            @include allow-line(black,90%,2px);
-            position:absolute;
-            bottom:5%;
-            right:0;
-
-            &-span{
-              @include allow-triangle();
-            }
-          }
-        }
-        // barここまで
-        }
-
-        // bar-secここまで
-      }
-    }
-
-    
-  }
-
   /*サポート*/
   &__supports{
     @include flex-column();

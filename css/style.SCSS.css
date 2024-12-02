@@ -51,6 +51,7 @@ input, button, textarea, select {
     scroll-behavior: auto !important;
   }
 }
+/*共通CSSここから--------------*/
 .l-body {
   font-family: "Noto Sans JP";
 }
@@ -83,6 +84,8 @@ h3 {
   }
 }
 
+/*共通CSSここまで*/
+/*ヘッダーここから-------------*/
 /*ナビゲーション*/
 .b-header-nav {
   margin: 16px 24px 0 24px;
@@ -174,6 +177,8 @@ h3 {
   font-size: 12px;
 }
 
+/*ヘッダーここまで*/
+/*オーダーメイドここから----------------*/
 /* オーダーメイド全体の枠組み*/
 .l-order-made {
   display: flex;
@@ -295,6 +300,8 @@ h3 {
   color: #E2001B;
 }
 
+/*オーダーメイドここまで*/
+/*サービスここから----------------*/
 /*サービス全体*/
 .l-service {
   background-color: #B40015;
@@ -326,8 +333,9 @@ h3 {
   color: #ffffff;
   text-align: left;
 }
-.b-service-heading__p--white-line {
+.b-service-heading__p::after {
   /*白線*/
+  content: "";
   display: block;
   margin-top: 8px;
   width: 90px;
@@ -465,7 +473,7 @@ h3 {
   font-size: 12px;
   padding-left: 1px;
 }
-.b-service-bar1-main__sub-span {
+.b-service-bar1-main-sub-span {
   /* 作品完成 */
   color: #ffffff;
   font-size: 12px;
@@ -473,7 +481,7 @@ h3 {
   right: 10%;
   bottom: -20%;
 }
-.b-service-bar1-main__allow {
+.b-service-bar1-main-allow {
   /* 矢印部分 */
   background-color: black;
   width: 90%;
@@ -482,7 +490,7 @@ h3 {
   bottom: 5%;
   right: 0;
 }
-.b-service-bar1-main__allow::after {
+.b-service-bar1-main-allow::after {
   /* 矢印：先端部分 */
   content: "";
   background-color: black;
@@ -535,7 +543,7 @@ h3 {
   }
 }
 .b-service-bar2-head__p::after {
-  /*黒矢印*/
+  /*白矢印*/
   content: "";
   display: inline-block;
   width: clamp(12px, 2vw, 16px);
@@ -570,6 +578,7 @@ h3 {
   justify-content: space-around;
 }
 .b-service-bar2-main-head__p {
+  /*見出しコンテナ内テキスト*/
   width: 50%;
   font-size: 12px;
   text-align: center;
@@ -585,7 +594,7 @@ h3 {
   align-items: center;
 }
 .b-service-bar2-main-liner__p {
-  /* 50%の部分 */
+  /* pタグ共通部分 */
   font-weight: bold;
 }
 .b-service-bar2-main-liner__p::after {
@@ -594,15 +603,31 @@ h3 {
   font-size: 12px;
   padding-left: 1px;
 }
-.b-service-bar2-main__sub-span {
-  /* 作品完成 */
+.b-service-bar2-main-liner__p:nth-of-type(1) {
+  position: absolute;
+  left: 35%;
+}
+.b-service-bar2-main-liner__p:nth-of-type(2) {
+  position: absolute;
+  right: 3%;
+}
+.b-service-bar2-main-sub-span {
+  /* 右下テキスト：配置 */
   color: #ffffff;
   font-size: 12px;
   position: absolute;
   right: 10%;
   bottom: -20%;
 }
-.b-service-bar2-main__allow {
+.b-service-bar2-main-bottom-span {
+  /*左下テキスト：配置*/
+  font-size: 8px;
+  color: white;
+  position: absolute;
+  bottom: -18%;
+  left: 5%;
+}
+.b-service-bar2-main-allow {
   /* 矢印部分 */
   background-color: black;
   width: 90%;
@@ -611,7 +636,7 @@ h3 {
   bottom: 5%;
   right: 0;
 }
-.b-service-bar2-main__allow::after {
+.b-service-bar2-main-allow::after {
   /* 矢印：先端部分 */
   content: "";
   background-color: black;
@@ -624,213 +649,9 @@ h3 {
   bottom: -7px;
 }
 
+/*サービスここまで*/
 .main {
-  /*サービス*/
   /*サポート*/
-}
-.main__service {
-  background-color: #B40015;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-@media screen and (max-width: 500px) {
-  .main__service {
-    padding: 16px;
-    gap: 16px;
-  }
-}
-.main__service__p {
-  color: #ffffff;
-  text-align: left;
-}
-.main__service__p__span {
-  display: block;
-  margin-top: 8px;
-  width: 90px;
-  height: 1px;
-  background-color: #ffffff;
-}
-.main__service__h2 {
-  color: #ffffff;
-}
-.main__service__main-container__bar-sec {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.main__service__main-container__bar-sec__bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
-  position: relative;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-}
-.main__service__main-container__bar-sec__bar__content-left {
-  width: 25%;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-left {
-    width: 70%;
-  }
-}
-.main__service__main-container__bar-sec__bar__content-left-p {
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 4px;
-  text-align: center;
-  font-weight: bold;
-  font-size: clamp(12px, 2vw, 16px);
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-left-p {
-    justify-content: center;
-  }
-}
-.main__service__main-container__bar-sec__bar__content-left-p-br {
-  display: block;
-}
-.main__service__main-container__bar-sec__bar__content-left-p-span {
-  display: inline-block;
-  width: clamp(12px, 2vw, 16px);
-  height: clamp(12px, 2vw, 24px);
-  background-color: black;
-  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
-          clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-left-p-span {
-    -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-  }
-}
-.main__service__main-container__bar-sec__bar__content-left2 {
-  width: 25%;
-  color: white;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-left2 {
-    width: 70%;
-  }
-}
-.main__service__main-container__bar-sec__bar__content-left2-p {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 4px;
-  text-align: center;
-  font-weight: bold;
-  font-size: clamp(12px, 2vw, 16px);
-  background-color: #B40015;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-left2-p {
-    justify-content: center;
-  }
-}
-.main__service__main-container__bar-sec__bar__content-left2-p-span {
-  display: inline-block;
-  width: clamp(12px, 2vw, 16px);
-  height: clamp(12px, 2vw, 24px);
-  background-color: #ffffff;
-  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
-          clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-left2-p-span {
-    -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-  }
-}
-.main__service__main-container__bar-sec__bar__content-right2 {
-  width: 70%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-@media screen and (max-width: 500px) {
-  .main__service__main-container__bar-sec__bar__content-right2 {
-    width: 100%;
-  }
-}
-.main__service__main-container__bar-sec__bar__content-right2-heading {
-  display: flex;
-  justify-content: space-around;
-}
-.main__service__main-container__bar-sec__bar__content-right2-heading-p {
-  width: 50%;
-  font-size: 12px;
-  text-align: center;
-  color: white;
-}
-.main__service__main-container__bar-sec__bar__content-right2-liner {
-  position: relative;
-  height: 50px;
-  background: linear-gradient(to right, #ffffff 80%, #F1B007 20%);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.main__service__main-container__bar-sec__bar__content-right2-liner-p1 {
-  position: absolute;
-  left: 35%;
-  font-weight: bold;
-}
-.main__service__main-container__bar-sec__bar__content-right2-liner-p1-span {
-  font-size: 12px;
-  padding-left: 1px;
-}
-.main__service__main-container__bar-sec__bar__content-right2-liner-p2 {
-  position: absolute;
-  right: 3%;
-  font-weight: bold;
-}
-.main__service__main-container__bar-sec__bar__content-right2-liner-p2-span {
-  font-size: 12px;
-  padding-left: 1px;
-}
-.main__service__main-container__bar-sec__bar__content-right2-sub-span {
-  color: #ffffff;
-  font-size: 12px;
-  position: absolute;
-  right: 10%;
-  bottom: -20%;
-}
-.main__service__main-container__bar-sec__bar__content-right2-bottom-span {
-  font-size: 8px;
-  color: white;
-  position: absolute;
-  bottom: -18%;
-  left: 5%;
-}
-.main__service__main-container__bar-sec__bar__content-right2-allow {
-  background-color: black;
-  width: 90%;
-  height: 2px;
-  position: absolute;
-  bottom: 5%;
-  right: 0;
-}
-.main__service__main-container__bar-sec__bar__content-right2-allow-span {
-  background-color: black;
-  width: 16px;
-  height: 16px;
-  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
-          clip-path: polygon(0 0, 100% 50%, 0 100%);
-  position: absolute;
-  right: -2px;
-  bottom: -7px;
 }
 .main__supports {
   display: flex;

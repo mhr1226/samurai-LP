@@ -113,11 +113,11 @@
     </div>
   </section>
   <!-- サービス -->
-  <section class="main__service l-service">
+  <section class="l-service">
     <!-- サービス見出し -->
     <div class="b-service-heading">
-      <!-- spanは下線用で記述 -->
-      <p class="b-service-heading__p">オリジナルサービスとは？<span class="main__service__p__span b-service-heading__p--white-line"></span></p>
+      <!-- 下線はCSSで記述 -->
+      <p class="b-service-heading__p">オリジナルサービスとは？<span class="b-service-heading__p--white-line"></span></p>
       <!-- タブレット時及びスマホ時に段階的に改行 -->
       <h2 class="b-service-heading__h2">オリジナルサービスの<br class="u-br-sp">開発こそが<br class="u-br-tb">本物のスキルを<br class="u-br-sp">身につける術となる。
       </h2>
@@ -126,22 +126,22 @@
 
   <!-- メインテキスト＋画像 -->
   <div class="b-service-main-content">
-    <p class="b-service-main-content__p b-service-main-content__p">オリジナルサービスとは、与えられた教材を使って作り上げるものとは異なり自分自身でサービス内容や実装する機能を考え作り上げる、世界で唯一のWEBサービスのことです。</p>
-    <p class="b-service-main-content__p  b-service-main-content__p">オリジナルサービス開発の最大の壁は「オリジナルのエラーが出ること」です。世界で唯一のサービスなのでネットや書籍を漁っても最適解を得られません。</p>
-    <p class="b-service-main-content__p b-service-main-content__p">通常であれば、挫折してしまうようなこうしたエラーに対して優秀なインストラクターがあなたの補助につき、マンツーマンで徹底指導することでその壁を乗り越え作品を完成させることができます。</p>
-    <p class="main__service__main-container__p  b-service-main-content__p">このような経験が実務的なスキルに繋がり、かつ、クオリティの高い作品集を作り上げることにより、オリジナルサービスの作品集はあなたのスキルの証明となり、転職や案件獲得につなげることができます。</p>
-    <img src="/images/service/service-phone-img.png" alt="スマホの画像" class="b-service-main-content__img">
+    <p class="b-service-main-content__p">オリジナルサービスとは、与えられた教材を使って作り上げるものとは異なり自分自身でサービス内容や実装する機能を考え作り上げる、世界で唯一のWEBサービスのことです。</p>
+    <p class="b-service-main-content__p">オリジナルサービス開発の最大の壁は「オリジナルのエラーが出ること」です。世界で唯一のサービスなのでネットや書籍を漁っても最適解を得られません。</p>
+    <p class="b-service-main-content__p">通常であれば、挫折してしまうようなこうしたエラーに対して優秀なインストラクターがあなたの補助につき、マンツーマンで徹底指導することでその壁を乗り越え作品を完成させることができます。</p>
+    <p class="b-service-main-content__p">このような経験が実務的なスキルに繋がり、かつ、クオリティの高い作品集を作り上げることにより、オリジナルサービスの作品集はあなたのスキルの証明となり、転職や案件獲得につなげることができます。</p>
+    <img class="b-service-main-content__img" src="/images/service/service-phone-img.png" alt="スマホの画像">
     <!-- メインテキスト＋画像ここまで -->
   </div>
 
-  <div class="main__service__main-container b-service-text-content">
+  <div class="b-service-text-content">
     <!-- カリキュラムバー全体のdiv -->
-    <div class="bar-sec main__service__main-container__bar-sec l-service-bar-container">
+    <div class="l-service-bar-container">
       <!-- バー１本目 -->
       <div class="b-service-bar1">
         <!-- 左側コンテンツdiv -->
         <div class="b-service-bar1-head">
-          <!-- 左見出し -->
+          <!-- 左見出し： 黒三角はCSSで記述 -->
           <p class="b-service-bar1-head__p">当塾の
             <br class="b-service-bar1-head__p--br">カリキュラム構成
             
@@ -153,8 +153,8 @@
         <div class="b-service-bar1-main">
           <!-- 見出しテキスト -->
           <div class="b-service-bar1-main-head">
-            <p class="main__service__main-container__bar-sec__bar__content-right-heading-p b-service-bar1-main-head__p">教材を<br class="u-br-sp">元にした<br class="u-br-tb">基礎的な学習</p>
-            <p class="main__service__main-container__bar-sec__bar__content-right-heading-p b-service-bar1-main-head__p">自分の<br class="u-br-sp">オリジナルサービスに<br class="u-br-tb">費やす割合</p>
+            <p class="b-service-bar1-main-head__p">教材を<br class="u-br-sp">元にした<br class="u-br-tb">基礎的な学習</p>
+            <p class="b-service-bar1-main-head__p">自分の<br class="u-br-sp">オリジナルサービスに<br class="u-br-tb">費やす割合</p>
           <!-- 見出しテキストここまで -->
           </div>
           <!--バー -->
@@ -168,9 +168,9 @@
             <!--バーここまで -->
           </div>
           <!-- 作品完成 -->
-          <span class="b-service-bar1-main__sub-span">作品完成</span>
+          <span class="b-service-bar1-main-sub-span">作品完成</span>
           <!--  矢印：線のdiv(先端はCSSに記述) -->
-          <div class="b-service-bar1-main__allow">
+          <div class="b-service-bar1-main-allow">
           <!-- 矢印ここまで -->
           </div>
         <!-- 右側コンテンツここまで -->
@@ -178,10 +178,10 @@
       <!-- バー１本目ここまで -->
       </div>
       <!-- バー２本目 -->
-      <div class="main__service__main-container__bar-sec__bar bar b-service-bar2">
+      <div class="b-service-bar2">
         <!-- 左側コンテンツdiv -->
         <div class="b-service-bar2-head">
-          <!-- 左見出し -->
+          <!-- 左見出し：白三角はCSSで記述 -->
           <p class="b-service-bar2-head__p">当塾の
             <br class="b-service-bar2-head__p--br">カリキュラム構成
           <!-- 左見出しここまで -->
@@ -189,7 +189,7 @@
           <!-- 左側コンテンツここまで -->
         </div>
         <!-- 右側コンテンツdiv -->
-        <div class="main__service__main-container__bar-sec__bar__content-right2 content-right2 b-service-bar2-main">
+        <div class="b-service-bar2-main">
           <!-- 見出しテキスト -->
           <div class="b-service-bar2-main-head">
             <p class="b-service-bar2-main-head__p">教材を<br class="u-br-sp">元にし た<br class="u-br-tb">基礎的な学習</p>
@@ -198,24 +198,20 @@
           </div>
           <!-- バー -->
           <div class="b-service-bar2-main-liner">
-            <!-- 80% -->
-            <p class="main__service__main-container__bar-sec__bar__content-right2-liner-p1 number1 b-service-bar2-main-liner--80">80
-              <span class="main__service__main-container__bar-sec__bar__content-right2-liner-p1-span">%</span>
+            <!-- 80%： % はCSSで記述 -->
+            <p class="b-service-bar2-main-liner__p">80
             </p>
-            <!-- 20% -->
-            <p class="main__service__main-container__bar-sec__bar__content-right2-liner-p2 number2  b-service-bar2-main-liner--20">20
-              <span class="main__service__main-container__bar-sec__bar__content-right2-liner-p2-span">%</span>
+            <!-- 20%： % はCSSで記述 -->
+            <p class="b-service-bar2-main-liner__p">20
             </p>
           <!-- バーここまで -->
           </div>
           <!-- 作品完成 -->
-          <span class="main__service__main-container__bar-sec__bar__content-right2-sub-span sub-span">作品完成</span>
+          <span class="b-service-bar2-main-sub-span"> 作品完成</span>
           <!-- 一般的なプログラミング学習例 -->
-          <span class="main__service__main-container__bar-sec__bar__content-right2-bottom-span bottom-span">※一般的なプログラミング学習例</span>
-          <!--  矢印のdiv -->
-          <div class="main__service__main-container__bar-sec__bar__content-right2-allow allow">
-            <!-- 矢印先端のspan -->
-            <span class="main__service__main-container__bar-sec__bar__content-right2-allow-span"></span>
+          <span class="b-service-bar2-main-bottom-span">※一般的なプログラミング学習例</span>
+          <!--  矢印のdiv： 先端部分はCSSで記述 -->
+          <div class="b-service-bar2-main-allow">
           <!-- 矢印ここまで -->
           </div>
         <!-- 右側コンテンツここまで -->
