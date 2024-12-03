@@ -672,8 +672,6 @@ h3{
 
 // サポート：カード内のh3:赤字部分：ミックスイン
 @mixin supports-card-h3-red(){
-
-  h3{
     /*カード1,3:h2用レイアウト*/
 
     /*カード：赤見出し*/
@@ -689,7 +687,6 @@ h3{
       height:2px;
       margin:$space-8 auto 0 auto;
     }
-  }
 }
 
 // サポート：カードレイアウト共通のミックスイン
@@ -749,16 +746,32 @@ h3{
   @include supports-card-layout();
 }
 
-/*サポート：カード：画像コンテナ*/
-.u-supports-card-img-box{
-  @include supports-card-img-box();
+// テストサポート：カード：レイアウト
+[class="l-supports-card"]{
+  @include supports-card-layout();
 }
 
-/*サポート：カード：テキストコンテナ*/
-.u-supports-card-text-box{
-  @include supports-card-text-box();
+/*親セレクタは、ネストで構造の明確性を保つために使用*/
+[class*="b-supports-card"]{
 
-}
+  
+  &[class$="__h3"]{
+    @include supports-card-h3-red();
+  }
+
+  /*サポート：カード：画像コンテナ*/
+  &[class$="-img-box"]{
+    /*サポート：カード：画像コンテナ*/
+    @include supports-card-img-box();
+  }
+
+  &[class$="-text-box"]{
+    /*サポート：カード：テキストコンテナ*/
+    @include supports-card-text-box();
+  }
+  }
+
+  /*サポートここまで*/
 
 
   // ヘッダー 移行済
