@@ -651,91 +651,119 @@ h3{
 
 /*サービスここまで*/
 
+/*サポートここから--------------*/
+
+/*サポート全体*/
+.l-supports{
+  @include flex-column();
+    gap:$space-24;
+    margin:$space-36 $space-24;
+
+  @include media-sp(){
+    gap:$space-16;
+    margin:$space-24 $space-16;
+  }
+}
+
+/*サポート：メイン見出し*/
+.b-supports-h2{
+  text-align:center;
+}
+
+// サポート：カード内のh3:赤字部分：ミックスイン
+@mixin supports-card-h3-red(){
+
+  h3{
+    /*カード1,3:h2用レイアウト*/
+
+    /*カード：赤見出し*/
+    color:$red;
+    text-align:center;
+
+    &::after{
+      /*赤見出し：赤線*/
+      content:'';
+      display:block;
+      background-color:$red;
+      width:10%;
+      height:2px;
+      margin:$space-8 auto 0 auto;
+    }
+  }
+}
+
+// サポート：カードレイアウト共通のミックスイン
+@mixin supports-card-layout(){
+  /*カード：レイアウト共通CSS*/
+  @include flex-column();
+  gap:$space-24;
+
+  h4{
+    margin-top:$space-8;
+  }
+
+  @include media-sp(){
+    gap:$space-16;
+  }
+}
+
+// サポート：カード内画像ボックスのミックスイン
+@mixin supports-card-img-box(){
+  /*カード：画像コンテナ共通CSS*/
+  position:relative;
+  display:flex;
+  justify-content:flex-end;
+
+  img{
+    /*カードコンテナ：画像*/
+    width:100%;
+
+    @include media-sp(){
+      width:90%;
+    }
+    
+  }
+
+  span{
+    /*画像：数字部分*/
+    font-size:56px;
+    font-weight:bold;
+    color:$red;
+    position:absolute;
+    bottom:-36px;
+    left:0;
+
+  }
+}
+
+// サポート：カード内テキストボックスのミックスイン
+@mixin supports-card-text-box(){
+  /*カード：テキストコンテナ共通CSS*/
+  @include flex-column;
+  gap:2px;
+}
+
+/*サポート：カード：レイアウト*/
+.u-supports-card{
+  @include supports-card-h3-red();
+  @include supports-card-layout();
+}
+
+/*サポート：カード：画像コンテナ*/
+.u-supports-card-img-box{
+  @include supports-card-img-box();
+}
+
+/*サポート：カード：テキストコンテナ*/
+.u-supports-card-text-box{
+  @include supports-card-text-box();
+
+}
+
 
   // ヘッダー 移行済
   // オーダーメイド 移行済
 .main{
-  
-  /*サポート*/
-  &__supports{
-    @include flex-column();
-    gap:$space-24;
-    margin:$space-36 $space-24;
-
-    @include media-sp(){
-      margin:$space-24 $space-16;
-    }
-
-
-    &__h2{
-      text-align:center;
-    }
-  
-    &__card-container{
-      @include flex-column();
-      gap:$space-24;
-
-      @include media-sp(){
-        gap:$space-16;
-      }
-      &__h3{
-        color:$red;
-        text-align:center;
-
-        &__span{
-          display:block;
-          background-color:$red;
-          width:10%;
-          height:2px;
-          margin:$space-8 auto 0 auto;
-        }
-
-        &__span2{
-          @include media-sp(){
-            display:block;
-          }
-        }
-      }
-
-      &__h4{
-        &__span{
-          @include media-sp(){
-            display:block;
-          }
-        }
-      }
-
-      &__card-img-container{
-          position:relative;
-          display:flex;
-          justify-content:flex-end;
-          &__img{
-            width:100%;
-
-            @include media-sp(){
-              width:90%;
-            }
-          }
-
-        &__span{
-          font-size:56px;
-          font-weight:bold;
-          color:$red;
-          position:absolute;
-          bottom:-36px;
-          left:0;
-        }
-      }
-
-      &__p{
-        &__span{
-          display:block;
-          // 行間を入れる為のCSS
-          margin:2px 0;
-        }
-      }
-    }
-  }
 
   &__voice{
     background-color:$light-gray;
