@@ -671,17 +671,28 @@ h3 {
 }
 
 /*サポート：カード：レイアウト*/
-.u-supports-card {
-  /*カード1,3:h2用レイアウト*/
-  /*カード：赤見出し*/
-  color: #E2001B;
-  text-align: center;
+[class*=l-supports-card] {
   /*カード：レイアウト共通CSS*/
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.u-supports-card::after {
+[class*=l-supports-card] h4 {
+  margin-top: 8px;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-supports-card] {
+    gap: 16px;
+  }
+}
+
+[class*=b-supports-card][class*=__h3] {
+  /*カード1,3:h2用レイアウト*/
+  /*カード：赤見出し*/
+  color: #E2001B;
+  text-align: center;
+}
+[class*=b-supports-card][class*=__h3]::after {
   /*赤見出し：赤線*/
   content: "";
   display: block;
@@ -690,66 +701,24 @@ h3 {
   height: 2px;
   margin: 8px auto 0 auto;
 }
-.u-supports-card h4 {
-  margin-top: 8px;
-}
-@media screen and (max-width: 500px) {
-  .u-supports-card {
-    gap: 16px;
-  }
-}
 
-[class=l-supports-card] {
-  /*カード：レイアウト共通CSS*/
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-[class=l-supports-card] h4 {
-  margin-top: 8px;
-}
-@media screen and (max-width: 500px) {
-  [class=l-supports-card] {
-    gap: 16px;
-  }
-}
-
-/*親セレクタは、ネストで構造の明確性を保つために使用*/
-[class*=b-supports-card] {
-  /*サポート：カード：画像コンテナ*/
-}
-[class*=b-supports-card][class$=__h3] {
-  /*カード1,3:h2用レイアウト*/
-  /*カード：赤見出し*/
-  color: #E2001B;
-  text-align: center;
-}
-[class*=b-supports-card][class$=__h3]::after {
-  /*赤見出し：赤線*/
-  content: "";
-  display: block;
-  background-color: #E2001B;
-  width: 10%;
-  height: 2px;
-  margin: 8px auto 0 auto;
-}
-[class*=b-supports-card][class$=-img-box] {
-  /*サポート：カード：画像コンテナ*/
+/*サポート：カード：画像コンテナ*/
+[class*=b-supports-card][class$=-img-box]:not([class*=__]) {
   /*カード：画像コンテナ共通CSS*/
   position: relative;
   display: flex;
   justify-content: flex-end;
 }
-[class*=b-supports-card][class$=-img-box] img {
+[class*=b-supports-card][class$=-img-box]:not([class*=__]) img {
   /*カードコンテナ：画像*/
   width: 100%;
 }
 @media screen and (max-width: 500px) {
-  [class*=b-supports-card][class$=-img-box] img {
+  [class*=b-supports-card][class$=-img-box]:not([class*=__]) img {
     width: 90%;
   }
 }
-[class*=b-supports-card][class$=-img-box] span {
+[class*=b-supports-card][class$=-img-box]:not([class*=__]) span {
   /*画像：数字部分*/
   font-size: 56px;
   font-weight: bold;
@@ -758,8 +727,9 @@ h3 {
   bottom: -36px;
   left: 0;
 }
-[class*=b-supports-card][class$=-text-box] {
-  /*サポート：カード：テキストコンテナ*/
+
+/*サポート：カード：テキストコンテナ*/
+[class*=b-supports-card][class$=-text-box]:not([class*=__]) {
   /*カード：テキストコンテナ共通CSS*/
   display: flex;
   flex-direction: column;
