@@ -670,8 +670,28 @@ h3{
   text-align:center;
 }
 
-// サポート：カード内のh3:赤字部分：ミックスイン
-@mixin supports-card-h3-red(){
+/*※中身が似ているコンテンツがある為、属性セレクタを使用*/
+
+/*サポート：カード：レイアウト*/
+[class*="l-supports-card"]{
+  /*カード：レイアウト共通CSS*/
+  @include flex-column();
+  gap:$space-24;
+
+  h4{
+    margin-top:$space-8;
+  }
+
+  @include media-sp(){
+    gap:$space-16;
+  }
+}
+
+/*子要素のネストの為に使用。
+  その為親セレクタにCSSの指定なし*/
+[class*="b-supports-card"]{
+
+  &[class*="-h3"]{
     /*カード1,3:h2用レイアウト*/
 
     /*カード：赤見出し*/
@@ -687,26 +707,11 @@ h3{
       height:2px;
       margin:$space-8 auto 0 auto;
     }
-}
-
-// サポート：カードレイアウト共通のミックスイン
-@mixin supports-card-layout(){
-  /*カード：レイアウト共通CSS*/
-  @include flex-column();
-  gap:$space-24;
-
-  h4{
-    margin-top:$space-8;
   }
 
-  @include media-sp(){
-    gap:$space-16;
-  }
-}
-
-// サポート：カード内画像ボックスのミックスイン
-@mixin supports-card-img-box(){
-  /*カード：画像コンテナ共通CSS*/
+  &[class$="-img-box"]:not([class*="__"]){
+    /*サポート：カード：画像コンテナ*/
+    /*カード：画像コンテナ共通CSS*/
   position:relative;
   display:flex;
   justify-content:flex-end;
@@ -731,46 +736,16 @@ h3{
     left:0;
 
   }
-}
+  }
 
-// サポート：カード内テキストボックスのミックスイン
-@mixin supports-card-text-box(){
-  /*カード：テキストコンテナ共通CSS*/
+  &[class$="-text-box"]:not([class*="__"]){
+    /*サポート：カード：テキストコンテナ*/
+    /*カード：テキストコンテナ共通CSS*/
   @include flex-column;
   gap:2px;
+  }
+
 }
-
-/*サポート：カード：レイアウト*/
-.u-supports-card{
-  @include supports-card-h3-red();
-  @include supports-card-layout();
-}
-
-// テストサポート：カード：レイアウト
-[class="l-supports-card"]{
-  @include supports-card-layout();
-}
-
-/*親セレクタは、ネストで構造の明確性を保つために使用*/
-[class*="b-supports-card"]{
-
-  
-  &[class$="__h3"]{
-    @include supports-card-h3-red();
-  }
-
-  /*サポート：カード：画像コンテナ*/
-  &[class$="-img-box"]{
-    /*サポート：カード：画像コンテナ*/
-    @include supports-card-img-box();
-  }
-
-  &[class$="-text-box"]{
-    /*サポート：カード：テキストコンテナ*/
-    @include supports-card-text-box();
-  }
-  }
-
   /*サポートここまで*/
 
 
