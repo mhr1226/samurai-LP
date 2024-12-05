@@ -670,6 +670,8 @@ h3{
   text-align:center;
 }
 
+/*※中身が似ているコンテンツがある為、属性セレクタを使用*/
+
 /*サポート：カード：レイアウト*/
 [class*="l-supports-card"]{
   /*カード：レイアウト共通CSS*/
@@ -685,9 +687,12 @@ h3{
   }
 }
 
+/*子要素のネストの為に使用。
+  その為親セレクタにCSSの指定なし*/
+[class*="b-supports-card"]{
 
-[class*="b-supports-card"][class*="__h3"]{
-  /*カード1,3:h2用レイアウト*/
+  &[class*="-h3"]{
+    /*カード1,3:h2用レイアウト*/
 
     /*カード：赤見出し*/
     color:$red;
@@ -702,11 +707,11 @@ h3{
       height:2px;
       margin:$space-8 auto 0 auto;
     }
-}
+  }
 
-  /*サポート：カード：画像コンテナ*/
-[class*="b-supports-card"][class$="-img-box"]:not([class*="__"]){
-  /*カード：画像コンテナ共通CSS*/
+  &[class$="-img-box"]:not([class*="__"]){
+    /*サポート：カード：画像コンテナ*/
+    /*カード：画像コンテナ共通CSS*/
   position:relative;
   display:flex;
   justify-content:flex-end;
@@ -731,15 +736,16 @@ h3{
     left:0;
 
   }
-}
+  }
 
-/*サポート：カード：テキストコンテナ*/
-[class*="b-supports-card"][class$="-text-box"]:not([class*="__"]){
-  /*カード：テキストコンテナ共通CSS*/
+  &[class$="-text-box"]:not([class*="__"]){
+    /*サポート：カード：テキストコンテナ*/
+    /*カード：テキストコンテナ共通CSS*/
   @include flex-column;
   gap:2px;
-}
+  }
 
+}
   /*サポートここまで*/
 
 
