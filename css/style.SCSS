@@ -653,6 +653,93 @@ h3{
 
 /*卒業生の声ここから------------------*/
 
+/*卒業生の声：セクション*/
+.l-voice{
+  background-color:white;
+  position:relative;
+  height:200px;
+}
+
+/*卒業生の声：スライダー用：全体のdiv*/
+.l-voice-slider-box{
+
+}
+
+/*卒業生の声：カード共通のCSS*/
+.l-voice-slider-card{
+
+}
+
+/*ネストで要素が分かりやすいように記述
+  その為、親要素にはCSSの指定なし*/
+[class*="b-voice-slider-card"]{
+
+  &[class$="__h4"]{
+    /*カード：h4（赤字）*/
+
+  }
+
+  &[class$="__red-box"]{
+    /* カード：変形＋赤背景 */
+
+    
+    &[class$="-h4"]{
+      /* 変形＋赤背景：h4 */
+
+    }
+  }
+
+  &[class$="__p"]{
+    /*カード：本文*/
+
+  }
+
+  &[class$="__name-span"]{
+    /*カード：受講生名*/
+
+  }
+
+  &[class$="__skill-span"]{
+    /*学習言語*/
+
+  }
+
+}
+
+.b-slider-right-btn{
+  border: {
+    top:2px solid black;
+    right:2px solid black;
+    bottom:2px solid transparent;
+    left:2px solid transparent;
+  }
+  background-color:$white;
+  width:clamp(1.25rem,4vw,1.5rem);
+  height:clamp(1.25rem,4vw,1.5rem);
+  transform:rotate(45deg);
+  position:absolute;
+  top:50%;
+  right:5%;
+}
+
+.b-slider-left-btn{
+  border: {
+    top:2px solid transparent;
+    right:2px solid transparent;
+    bottom:2px solid black;
+    left:2px solid black;
+  }
+  background-color:transparent;
+  width:clamp(1.25rem,4vw,1.5rem);
+  height:clamp(1.25rem,4vw,1.5rem);
+  transform:rotate(45deg);
+  position:absolute;
+  top:50%;
+  left:5%;
+}
+.h1{
+  margin:3%;
+}
 
   
   /*卒業生の声ここまで*/
