@@ -651,6 +651,103 @@ h3{
 
 /*サービスここまで*/
 
+/*サポートここから--------------*/
+
+/*サポート全体*/
+.l-supports{
+  @include flex-column();
+    gap:$space-24;
+    margin:$space-36 $space-24;
+
+  @include media-sp(){
+    gap:$space-16;
+    margin:$space-24 $space-16;
+  }
+}
+
+/*サポート：メイン見出し*/
+.b-supports-h2{
+  text-align:center;
+}
+
+/*※中身が似ているコンテンツがある為、属性セレクタを使用*/
+
+/*サポート：カード：レイアウト*/
+[class*="l-supports-card"]{
+  /*カード：レイアウト共通CSS*/
+  @include flex-column();
+  gap:$space-24;
+
+  h4{
+    margin-top:$space-8;
+  }
+
+  @include media-sp(){
+    gap:$space-16;
+  }
+}
+
+/*子要素のネストの為に使用。
+  その為親セレクタにCSSの指定なし*/
+[class*="b-supports-card"]{
+
+  &[class*="-h3"]{
+    /*カード1,3:h2用レイアウト*/
+
+    /*カード：赤見出し*/
+    color:$red;
+    text-align:center;
+
+    &::after{
+      /*赤見出し：赤線*/
+      content:'';
+      display:block;
+      background-color:$red;
+      width:10%;
+      height:2px;
+      margin:$space-8 auto 0 auto;
+    }
+  }
+
+  &[class$="-img-box"]:not([class*="__"]){
+    /*サポート：カード：画像コンテナ*/
+    /*カード：画像コンテナ共通CSS*/
+  position:relative;
+  display:flex;
+  justify-content:flex-end;
+
+  img{
+    /*カードコンテナ：画像*/
+    width:100%;
+
+    @include media-sp(){
+      width:90%;
+    }
+    
+  }
+
+  span{
+    /*画像：数字部分*/
+    font-size:56px;
+    font-weight:bold;
+    color:$red;
+    position:absolute;
+    bottom:-36px;
+    left:0;
+
+  }
+  }
+
+  &[class$="-text-box"]:not([class*="__"]){
+    /*サポート：カード：テキストコンテナ*/
+    /*カード：テキストコンテナ共通CSS*/
+  @include flex-column;
+  gap:2px;
+  }
+
+}
+  /*サポートここまで*/
+
 /*卒業生の声ここから------------------*/
 
 /*卒業生の声：セクション*/
@@ -747,87 +844,6 @@ h3{
   // ヘッダー 移行済
   // オーダーメイド 移行済
 .main{
-  
-  /*サポート*/
-  &__supports{
-    @include flex-column();
-    gap:$space-24;
-    margin:$space-36 $space-24;
-
-    @include media-sp(){
-      margin:$space-24 $space-16;
-    }
-
-
-    &__h2{
-      text-align:center;
-    }
-  
-    &__card-container{
-      @include flex-column();
-      gap:$space-24;
-
-      @include media-sp(){
-        gap:$space-16;
-      }
-      &__h3{
-        color:$red;
-        text-align:center;
-
-        &__span{
-          display:block;
-          background-color:$red;
-          width:10%;
-          height:2px;
-          margin:$space-8 auto 0 auto;
-        }
-
-        &__span2{
-          @include media-sp(){
-            display:block;
-          }
-        }
-      }
-
-      &__h4{
-        &__span{
-          @include media-sp(){
-            display:block;
-          }
-        }
-      }
-
-      &__card-img-container{
-          position:relative;
-          display:flex;
-          justify-content:flex-end;
-          &__img{
-            width:100%;
-
-            @include media-sp(){
-              width:90%;
-            }
-          }
-
-        &__span{
-          font-size:56px;
-          font-weight:bold;
-          color:$red;
-          position:absolute;
-          bottom:-36px;
-          left:0;
-        }
-      }
-
-      &__p{
-        &__span{
-          display:block;
-          // 行間を入れる為のCSS
-          margin:2px 0;
-        }
-      }
-    }
-  }
 
   &__voice{
     background-color:$light-gray;
