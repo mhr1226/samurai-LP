@@ -752,19 +752,109 @@ h3{
 
 /*卒業生の声：セクション*/
 .l-voice{
-  background-color:white;
+  background-color:$light-gray;
+  @include flex-column;
+  gap:$space-24;
   position:relative;
-  height:200px;
+}
+
+/*卒業生の声：大見出し*/
+.b-voice-h2{
+  margin-top:$space-24;
+  text-align:center;
 }
 
 /*卒業生の声：スライダー用：全体のdiv*/
 .l-voice-slider-box{
-
+  display:flex;
+  justify-content:space-around;
+  padding:0 $space-24;
+  position:relative;
+  overflow:hidden;
 }
 
 /*卒業生の声：カード共通のCSS*/
-.l-voice-slider-card{
+[class*="l-voice-slider-card"]{
+  @include flex-column;
+  display:none;
+  gap:$space-4;
+  width:40%;
+  font-size:$space-12;
+  text-decoration:none;
+  color:black;
+  transition:all 1s ease;
 
+  &:hover{
+    transform:scale(105%);
+    opacity:0.8;
+  }
+
+
+  @include media-sp(){
+    width:80%;
+    font-size:$font-16;
+    gap:$space-8;
+  }
+
+  &[class$="--default"]{
+    display:flex;
+  }
+
+  &[class$="--next"]{
+    /*JS制御用：次ページのカード表示位置*/
+    display:flex;
+    @include media-sp(){
+    position:absolute;
+    z-index:100;
+    transform:
+        translate(100%,0) 
+        scale(90%);
+    opacity:0.4;
+    pointer-events:none;
+    }
+  }
+
+  &[class$="--sub-next"]{
+    /*JS制御用：次々ページのカード表示位置*/
+    display:flex;
+    @include media-sp(){
+    position:absolute;
+    z-index:100;
+    transform:
+      translate(200%,0) 
+      scale(80%);
+    opacity:0.4;
+    pointer-events:none;
+    }
+  }
+
+  &[class$="--prev"]{
+    /*JS制御用：前ページのカード表示位置*/
+    display:flex;
+    @include media-sp(){
+      position:absolute;
+      z-index:100;
+      transform:
+          translate(-100%,0) 
+          scale(90%);
+      opacity:0.4;
+      pointer-events:none;
+      }
+  }
+
+  &[class$="--sub-prev"]{
+    /*JS制御用：前々ページ目のカード表示位置*/
+    display:flex;
+    @include media-sp(){
+      position:absolute;
+      z-index:100;
+      transform:
+        translate(-200%,0) 
+        scale(80%);
+      opacity:0.4;
+      pointer-events:none;
+      }
+  }
 }
 
 /*ネストで要素が分かりやすいように記述
@@ -773,69 +863,153 @@ h3{
 
   &[class$="__h4"]{
     /*カード：h4（赤字）*/
+    color:$red;
+    font-size:clamp(8px,6vw,12px);
+    text-align:center;
+    font-weight:normal;
+
+    @include media-sp(){
+      font-size:clamp(12px,6vw,16px);
+    }
 
   }
 
-  &[class$="__red-box"]{
-    /* カード：変形＋赤背景 */
-
+  &[class$="__red-shadow-box"]{
+    /* カード：変形＋赤背景＋ぼかし */
+    /*変形＋赤背景＋ぼかし：ぼかし用のdiv*/
+    filter:drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
     
-    &[class$="-h4"]{
-      /* 変形＋赤背景：h4 */
+    & div{
+      /*変形＋赤背景＋ぼかし：赤背景＋変形用のdiv*/
+    /*-red-back*/
+    &:nth-of-type(1){
+      background-color:$red;
+      border-bottom:2px solid black;
+      padding:$space-4 0;
+      clip-path:polygon(
+      0 0,
+      90% 0,
+      100% 100%,
+      0 100%
+    );
 
+      @include media-sp(){
+        padding:$space-8 0;
+      }
+    }
+    }
+
+    & h4{
+      /* 変形＋赤背景＋ぼかし：h4 */
+      color:$white;
+      text-align:center;
+      font-size:clamp($font-12,6vw,$font-16);
+
+      @include media-sp(){
+        font-size:clamp($font-16,6vw,$font-20);
+      }
     }
   }
 
+  
+
   &[class$="__p"]{
     /*カード：本文*/
-
+    font-weight:bold;
   }
 
   &[class$="__name-span"]{
     /*カード：受講生名*/
-
+    color:$gray;
   }
 
   &[class$="__skill-span"]{
     /*学習言語*/
+    color:$dark-gray;
+  }
 
+  &[class$=link-span]{
+    // インタビューへ
+    color:$red;
+    text-align:right;
   }
 
 }
 
-.b-slider-right-btn{
-  border: {
-    top:2px solid black;
-    right:2px solid black;
-    bottom:2px solid transparent;
-    left:2px solid transparent;
-  }
-  background-color:$white;
-  width:clamp(1.25rem,4vw,1.5rem);
-  height:clamp(1.25rem,4vw,1.5rem);
-  transform:rotate(45deg);
-  position:absolute;
-  top:50%;
-  right:5%;
+[class*="b-voice-btn"]{
+    /*スライダー：矢印共通のCSS*/
+    background-color:transparent;
+    width:clamp(1.25rem,4vw,1.5rem);
+    height:clamp(1.25rem,4vw,1.5rem);
+    transform:rotate(45deg);
+    cursor:pointer;
+    transition:all 0.5s ease;
+
+    &:hover{
+      width:clamp(1.5rem,4vw,2rem);
+      height:clamp(1.5rem,4vw,2rem);
+    }
+
+    &[class$="-left"]{
+      /*スライダー：左矢印*/
+      border: {
+        top:2px solid transparent;
+        right:2px solid transparent;
+        bottom:2px solid black;
+        left:2px solid black;
+      }
+      position:absolute;
+      top:50%;
+      left:5%;
+    }
+
+    &[class$="-right"]{
+      /*スライダー：右矢印*/
+    border: {
+      top:2px solid black;
+      right:2px solid black;
+      bottom:2px solid transparent;
+      left:2px solid transparent;
+    }
+    position:absolute;
+    top:50%;
+    right:5%;
+    }
+    
 }
 
-.b-slider-left-btn{
-  border: {
-    top:2px solid transparent;
-    right:2px solid transparent;
-    bottom:2px solid black;
-    left:2px solid black;
-  }
-  background-color:transparent;
-  width:clamp(1.25rem,4vw,1.5rem);
-  height:clamp(1.25rem,4vw,1.5rem);
-  transform:rotate(45deg);
-  position:absolute;
-  top:50%;
-  left:5%;
+/*ドットボタン全体のdiv*/
+.b-voice-dot-box{
+  @include flex();
+  gap:2vw;
+  margin-bottom:$space-24;
+
 }
-.h1{
-  margin:3%;
+
+[class*="b-voice-dot-box"]{
+
+  &[class*="__btn"]{
+    width:20px;
+    height:4px;
+    border:none;
+    background-color:$gray;
+    transition:all 1s ease;
+    cursor:pointer;
+
+
+    /*動作チェック用テスト*/
+    &:hover{
+      opacity:0.5;
+    }
+
+    &[class$="--active"]{
+    /*JS制御用：ドットの現在位置*/
+    background-color:black;
+    pointer-events:none;
+  }
+  }
+
+  
 }
 
   
@@ -843,25 +1017,3 @@ h3{
 
   // ヘッダー 移行済
   // オーダーメイド 移行済
-.main{
-
-  &__voice{
-    background-color:$light-gray;
-
-    &__h2{
-      text-align:center;
-
-      
-    }
-
-    &__card-container{
-      display:flex;
-      gap:$space-16;
-    }
-  }
-}
-
-
-
-
-

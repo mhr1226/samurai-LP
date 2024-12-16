@@ -741,75 +741,230 @@ h3 {
 /*卒業生の声ここから------------------*/
 /*卒業生の声：セクション*/
 .l-voice {
-  background-color: white;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   position: relative;
-  height: 200px;
+}
+
+/*卒業生の声：大見出し*/
+.b-voice-h2 {
+  margin-top: 24px;
+  text-align: center;
 }
 
 /*卒業生の声：スライダー用：全体のdiv*/
+.l-voice-slider-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 24px;
+  position: relative;
+  overflow: hidden;
+}
+
 /*卒業生の声：カード共通のCSS*/
+[class*=l-voice-slider-card] {
+  display: flex;
+  flex-direction: column;
+  display: none;
+  gap: 4px;
+  width: 40%;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  transition: all 1s ease;
+}
+[class*=l-voice-slider-card]:hover {
+  transform: scale(105%);
+  opacity: 0.8;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card] {
+    width: 80%;
+    font-size: 16px;
+    gap: 8px;
+  }
+}
+[class*=l-voice-slider-card][class$="--default"] {
+  display: flex;
+}
+[class*=l-voice-slider-card][class$="--next"] {
+  /*JS制御用：次ページのカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--next"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(100%, 0) scale(90%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+[class*=l-voice-slider-card][class$="--sub-next"] {
+  /*JS制御用：次々ページのカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--sub-next"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(200%, 0) scale(80%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+[class*=l-voice-slider-card][class$="--prev"] {
+  /*JS制御用：前ページのカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--prev"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(-100%, 0) scale(90%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+[class*=l-voice-slider-card][class$="--sub-prev"] {
+  /*JS制御用：前々ページ目のカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--sub-prev"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(-200%, 0) scale(80%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
 /*ネストで要素が分かりやすいように記述
   その為、親要素にはCSSの指定なし*/
 [class*=b-voice-slider-card][class$=__h4] {
   /*カード：h4（赤字）*/
+  color: #E2001B;
+  font-size: clamp(8px, 6vw, 12px);
+  text-align: center;
+  font-weight: normal;
 }
-[class*=b-voice-slider-card][class$=__red-box] {
-  /* カード：変形＋赤背景 */
+@media screen and (max-width: 500px) {
+  [class*=b-voice-slider-card][class$=__h4] {
+    font-size: clamp(12px, 6vw, 16px);
+  }
 }
-[class*=b-voice-slider-card][class$=__red-box][class$=-h4] {
-  /* 変形＋赤背景：h4 */
+[class*=b-voice-slider-card][class$=__red-shadow-box] {
+  /* カード：変形＋赤背景＋ぼかし */
+  /*変形＋赤背景＋ぼかし：ぼかし用のdiv*/
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+[class*=b-voice-slider-card][class$=__red-shadow-box] div {
+  /*変形＋赤背景＋ぼかし：赤背景＋変形用のdiv*/
+  /*-red-back*/
+}
+[class*=b-voice-slider-card][class$=__red-shadow-box] div:nth-of-type(1) {
+  background-color: #E2001B;
+  border-bottom: 2px solid black;
+  padding: 4px 0;
+  -webkit-clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+@media screen and (max-width: 500px) {
+  [class*=b-voice-slider-card][class$=__red-shadow-box] div:nth-of-type(1) {
+    padding: 8px 0;
+  }
+}
+[class*=b-voice-slider-card][class$=__red-shadow-box] h4 {
+  /* 変形＋赤背景＋ぼかし：h4 */
+  color: #ffffff;
+  text-align: center;
+  font-size: clamp(12px, 6vw, 16px);
+}
+@media screen and (max-width: 500px) {
+  [class*=b-voice-slider-card][class$=__red-shadow-box] h4 {
+    font-size: clamp(16px, 6vw, 20px);
+  }
 }
 [class*=b-voice-slider-card][class$=__p] {
   /*カード：本文*/
+  font-weight: bold;
 }
 [class*=b-voice-slider-card][class$=__name-span] {
   /*カード：受講生名*/
+  color: #9d9d9d;
 }
 [class*=b-voice-slider-card][class$=__skill-span] {
   /*学習言語*/
+  color: #6d6d6d;
+}
+[class*=b-voice-slider-card][class$=link-span] {
+  color: #E2001B;
+  text-align: right;
 }
 
-.b-slider-right-btn {
+[class*=b-voice-btn] {
+  /*スライダー：矢印共通のCSS*/
+  background-color: transparent;
+  width: clamp(1.25rem, 4vw, 1.5rem);
+  height: clamp(1.25rem, 4vw, 1.5rem);
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+[class*=b-voice-btn]:hover {
+  width: clamp(1.5rem, 4vw, 2rem);
+  height: clamp(1.5rem, 4vw, 2rem);
+}
+[class*=b-voice-btn][class$=-left] {
+  /*スライダー：左矢印*/
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+[class*=b-voice-btn][class$=-right] {
+  /*スライダー：右矢印*/
   border-top: 2px solid black;
   border-right: 2px solid black;
   border-bottom: 2px solid transparent;
   border-left: 2px solid transparent;
-  background-color: #ffffff;
-  width: clamp(1.25rem, 4vw, 1.5rem);
-  height: clamp(1.25rem, 4vw, 1.5rem);
-  transform: rotate(45deg);
   position: absolute;
   top: 50%;
   right: 5%;
 }
 
-.b-slider-left-btn {
-  border-top: 2px solid transparent;
-  border-right: 2px solid transparent;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
-  background-color: transparent;
-  width: clamp(1.25rem, 4vw, 1.5rem);
-  height: clamp(1.25rem, 4vw, 1.5rem);
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 5%;
+/*ドットボタン全体のdiv*/
+.b-voice-dot-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-bottom: 24px;
 }
 
-.h1 {
-  margin: 3%;
+[class*=b-voice-dot-box][class*=__btn] {
+  width: 20px;
+  height: 4px;
+  border: none;
+  background-color: #9d9d9d;
+  transition: all 1s ease;
+  cursor: pointer;
+  /*動作チェック用テスト*/
+}
+[class*=b-voice-dot-box][class*=__btn]:hover {
+  opacity: 0.5;
+}
+[class*=b-voice-dot-box][class*=__btn][class$="--active"] {
+  /*JS制御用：ドットの現在位置*/
+  background-color: black;
+  pointer-events: none;
 }
 
 /*卒業生の声ここまで*/
-.main__voice {
-  background-color: #fafafa;
-}
-.main__voice__h2 {
-  text-align: center;
-}
-.main__voice__card-container {
-  display: flex;
-  gap: 16px;
-}
 /*# sourceMappingURL=style.SCSS.css.map */
