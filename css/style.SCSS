@@ -754,13 +754,13 @@ h3{
 .l-voice{
   background-color:$light-gray;
   @include flex-column;
-  padding:$space-24;
   gap:$space-24;
   position:relative;
 }
 
 /*卒業生の声：大見出し*/
 .b-voice-h2{
+  margin-top:$space-24;
   text-align:center;
 }
 
@@ -768,44 +768,93 @@ h3{
 .l-voice-slider-box{
   display:flex;
   justify-content:space-around;
-  margin:0 $space-24;
+  padding:0 $space-24;
+  position:relative;
+  overflow:hidden;
 }
 
 /*卒業生の声：カード共通のCSS*/
 [class*="l-voice-slider-card"]{
   @include flex-column;
+  display:none;
   gap:$space-4;
   width:40%;
   font-size:$space-12;
   text-decoration:none;
   color:black;
-  position:relative;
   transition:all 1s ease;
 
-
-  /*アニメーション動作チェック*/
   &:hover{
-    opacity:0.4;
-    transform:
-      translate(50%,0) 
-      scale(80%);
+    transform:scale(105%);
+    opacity:0.8;
   }
 
+
   @include media-sp(){
-    transform:
-      translate(0,0) 
-      scale(100%);
-    ;
     width:80%;
     font-size:$font-16;
     gap:$space-8;
   }
-}
 
-/*動作チェックの為追加*/
-.l-voice-slider-card2{
-  display:none;
+  &[class$="--default"]{
+    display:flex;
+  }
 
+  &[class$="--next"]{
+    /*JS制御用：次ページのカード表示位置*/
+    display:flex;
+    @include media-sp(){
+    position:absolute;
+    z-index:100;
+    transform:
+        translate(100%,0) 
+        scale(90%);
+    opacity:0.4;
+    pointer-events:none;
+    }
+  }
+
+  &[class$="--sub-next"]{
+    /*JS制御用：次々ページのカード表示位置*/
+    display:flex;
+    @include media-sp(){
+    position:absolute;
+    z-index:100;
+    transform:
+      translate(200%,0) 
+      scale(80%);
+    opacity:0.4;
+    pointer-events:none;
+    }
+  }
+
+  &[class$="--prev"]{
+    /*JS制御用：前ページのカード表示位置*/
+    display:flex;
+    @include media-sp(){
+      position:absolute;
+      z-index:100;
+      transform:
+          translate(-100%,0) 
+          scale(90%);
+      opacity:0.4;
+      pointer-events:none;
+      }
+  }
+
+  &[class$="--sub-prev"]{
+    /*JS制御用：前々ページ目のカード表示位置*/
+    display:flex;
+    @include media-sp(){
+      position:absolute;
+      z-index:100;
+      transform:
+        translate(-200%,0) 
+        scale(80%);
+      opacity:0.4;
+      pointer-events:none;
+      }
+  }
 }
 
 /*ネストで要素が分かりやすいように記述
@@ -912,13 +961,6 @@ h3{
       position:absolute;
       top:50%;
       left:5%;
-
-      // :active{
-
-      //   @for $i from 1 through 2{
-      //     &
-      //   }
-      //     }
     }
 
     &[class$="-right"]{
@@ -940,8 +982,13 @@ h3{
 .b-voice-dot-box{
   @include flex();
   gap:2vw;
+  margin-bottom:$space-24;
 
-  & > button{
+}
+
+[class*="b-voice-dot-box"]{
+
+  &[class*="__btn"]{
     width:20px;
     height:4px;
     border:none;
@@ -955,11 +1002,14 @@ h3{
       opacity:0.5;
     }
 
-    &:nth-of-type(1){
-      background-color:black;
-    }
-
+    &[class$="--active"]{
+    /*JS制御用：ドットの現在位置*/
+    background-color:black;
+    pointer-events:none;
   }
+  }
+
+  
 }
 
   

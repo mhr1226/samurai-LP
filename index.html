@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="css/style.SCSS.css">
   <!-- Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap" rel="stylesheet">
+  <!-- JS読み込み用 -->
+  <script src="/script.js" defer></script>
 </head>
 <body class="l-body">
 <header class="l-header">
@@ -332,7 +334,7 @@
   <!-- スライダー用：全体のdiv -->
   <div class="l-voice-slider-box">
     <!-- スライド用：カード1 -->
-    <a href="#" class="l-voice-slider-card1" data-active="1">
+    <a href="#" class="l-voice-slider-card1">
       <!-- カード：画像 -->
       <img src="/images/voice/voice-img-1.jpg" alt="" class="b-voice-slider-card__img">
       <!-- カード：h4 -->
@@ -359,11 +361,10 @@
       <div class="b-voice-slider-card1__allow"></div>
       <!-- スライダー用：カードここまで -->
     </a>
-
     <!-- スライド用：カード2 -->
-    <a href="#" class="l-voice-slider-card2" data-active="2">
+    <a href="#" class="l-voice-slider-card2">
       <!-- カード：画像 -->
-      <img src="/images/voice/voice-img-1.jpg" alt="" class="b-voice-slider-card__img">
+      <img src="/images/voice/voice-img-2.jpg" alt="" class="b-voice-slider-card__img">
       <!-- カード：h4 -->
       <h4 class="b-voice-slider-card2__h4">元文系出身SE</h4>
       <!-- カード：変形・赤背景・ぼかし・矢印：ぼかし用のdiv -->
@@ -388,6 +389,118 @@
       <div class="b-voice-slider-card2__allow"></div>
       <!-- スライダー用：カードここまで -->
     </a>
+    <!-- スライド用：カード3 -->
+    <a href="#" class="l-voice-slider-card3">
+      <!-- カード：画像 -->
+      <img src="/images/voice/voice-img-1.jpg" alt="" class="b-voice-slider-card__img">
+      <!-- カード：h4 -->
+      <h4 class="b-voice-slider-card1__h4">元文系出身SE</h4>
+      <!-- カード：変形・赤背景・ぼかし・矢印：ぼかし用のdiv -->
+      <div class="b-voice-slider-card1__red-shadow-box">
+        <!-- カード：変形・赤背景・ぼかし・矢印：赤背景・変形用のdiv -->
+        <div class="b-voice-slider-card1__red-shadow-box-red-back">
+          <!-- 変形・赤背景・ぼかし・矢印：h4 -->
+          <h4 class="b-voice-slider-card1__red-shadow-box-h4">受託開発エンジニア</h4>
+        </div>
+      </div>
+      
+      <!-- カード：本文 -->
+      <p class="b-voice-slider-card1__p">
+        侍エンジニア塾はその中でもブログの技術系記事がたくあんあって、ナレッジも豊富でしっかりと教えてくれました。
+      </p>
+      <!-- カード：卒業生：名前 -->
+      <span class="b-voice-slider-card1__name-span">侍　太郎(31)</span>
+      <!-- カード：学習言語 -->
+      <span class="b-voice-slider-card1__skill-span">学習言語　Java,HTML,CSS,JavaScript</span>
+      <span href="" class="b-voice-slider-card1__link-span">インタビューへ</span>
+      <!-- 変形・赤背景・ぼかし・矢印：矢印のdiv -->
+      <div class="b-voice-slider-card1__allow"></div>
+      <!-- スライダー用：カードここまで -->
+    </a>
+    <!-- スライド用：カード4 -->
+    <a href="#" class="l-voice-slider-card4">
+      <!-- カード：画像 -->
+      <img src="/images/voice/voice-img-2.jpg" alt="" class="b-voice-slider-card__img">
+      <!-- カード：h4 -->
+      <h4 class="b-voice-slider-card1__h4">元文系出身SE</h4>
+      <!-- カード：変形・赤背景・ぼかし・矢印：ぼかし用のdiv -->
+      <div class="b-voice-slider-card1__red-shadow-box">
+        <!-- カード：変形・赤背景・ぼかし・矢印：赤背景・変形用のdiv -->
+        <div class="b-voice-slider-card1__red-shadow-box-red-back">
+          <!-- 変形・赤背景・ぼかし・矢印：h4 -->
+          <h4 class="b-voice-slider-card1__red-shadow-box-h4">受託開発エンジニア</h4>
+        </div>
+      </div>
+      
+      <!-- カード：本文 -->
+      <p class="b-voice-slider-card1__p">
+        侍エンジニア塾はその中でもブログの技術系記事がたくあんあって、ナレッジも豊富でしっかりと教えてくれました。
+      </p>
+      <!-- カード：卒業生：名前 -->
+      <span class="b-voice-slider-card1__name-span">侍　太郎(31)</span>
+      <!-- カード：学習言語 -->
+      <span class="b-voice-slider-card1__skill-span">学習言語　Java,HTML,CSS,JavaScript</span>
+      <span href="" class="b-voice-slider-card1__link-span">インタビューへ</span>
+      <!-- 変形・赤背景・ぼかし・矢印：矢印のdiv -->
+      <div class="b-voice-slider-card1__allow"></div>
+      <!-- スライダー用：カードここまで -->
+    </a>
+    <!-- スライド用：カード5 -->
+    <a href="#" class="l-voice-slider-card5">
+      <!-- カード：画像 -->
+      <img src="/images/voice/voice-img-1.jpg" alt="" class="b-voice-slider-card__img">
+      <!-- カード：h4 -->
+      <h4 class="b-voice-slider-card1__h4">元文系出身SE</h4>
+      <!-- カード：変形・赤背景・ぼかし・矢印：ぼかし用のdiv -->
+      <div class="b-voice-slider-card1__red-shadow-box">
+        <!-- カード：変形・赤背景・ぼかし・矢印：赤背景・変形用のdiv -->
+        <div class="b-voice-slider-card1__red-shadow-box-red-back">
+          <!-- 変形・赤背景・ぼかし・矢印：h4 -->
+          <h4 class="b-voice-slider-card1__red-shadow-box-h4">受託開発エンジニア</h4>
+        </div>
+      </div>
+      
+      <!-- カード：本文 -->
+      <p class="b-voice-slider-card1__p">
+        侍エンジニア塾はその中でもブログの技術系記事がたくあんあって、ナレッジも豊富でしっかりと教えてくれました。
+      </p>
+      <!-- カード：卒業生：名前 -->
+      <span class="b-voice-slider-card1__name-span">侍　太郎(31)</span>
+      <!-- カード：学習言語 -->
+      <span class="b-voice-slider-card1__skill-span">学習言語　Java,HTML,CSS,JavaScript</span>
+      <span href="" class="b-voice-slider-card1__link-span">インタビューへ</span>
+      <!-- 変形・赤背景・ぼかし・矢印：矢印のdiv -->
+      <div class="b-voice-slider-card1__allow"></div>
+      <!-- スライダー用：カードここまで -->
+    </a>
+    <!-- スライド用：カード6 -->
+    <a href="#" class="l-voice-slider-card6">
+      <!-- カード：画像 -->
+      <img src="/images/voice/voice-img-2.jpg" alt="" class="b-voice-slider-card__img">
+      <!-- カード：h4 -->
+      <h4 class="b-voice-slider-card1__h4">元文系出身SE</h4>
+      <!-- カード：変形・赤背景・ぼかし・矢印：ぼかし用のdiv -->
+      <div class="b-voice-slider-card1__red-shadow-box">
+        <!-- カード：変形・赤背景・ぼかし・矢印：赤背景・変形用のdiv -->
+        <div class="b-voice-slider-card1__red-shadow-box-red-back">
+          <!-- 変形・赤背景・ぼかし・矢印：h4 -->
+          <h4 class="b-voice-slider-card1__red-shadow-box-h4">受託開発エンジニア</h4>
+        </div>
+      </div>
+      
+      <!-- カード：本文 -->
+      <p class="b-voice-slider-card1__p">
+        侍エンジニア塾はその中でもブログの技術系記事がたくあんあって、ナレッジも豊富でしっかりと教えてくれました。
+      </p>
+      <!-- カード：卒業生：名前 -->
+      <span class="b-voice-slider-card1__name-span">侍　太郎(31)</span>
+      <!-- カード：学習言語 -->
+      <span class="b-voice-slider-card1__skill-span">学習言語　Java,HTML,CSS,JavaScript</span>
+      <span href="" class="b-voice-slider-card1__link-span">インタビューへ</span>
+      <!-- 変形・赤背景・ぼかし・矢印：矢印のdiv -->
+      <div class="b-voice-slider-card1__allow"></div>
+      <!-- スライダー用：カードここまで -->
+    </a>
     <!-- スライダー用：全体のdivここまで -->
   </div>
   
@@ -398,17 +511,17 @@
   <!-- スライダー用ドットボタン:全体のdiv -->
   <div class="b-voice-dot-box">
     <!-- ボタン1 -->
-    <button class="b-voice-dot-box-1"></button>
+    <button class="b-voice-dot-box1__btn"></button>
     <!-- ボタン2 -->
-    <button class="b-voice-dot-box-2"></button>
+    <button class="b-voice-dot-box2__btn"></button>
     <!-- ボタン3 (TB版のみ表示)-->
-    <button class="b-voice-dot-box-3"></button>
+    <button class="b-voice-dot-box3__btn"></button>
     <!-- ボタン4 (SP版のみ表示)-->
-    <button class="b-voice-dot-box-4"></button>
+    <button class="b-voice-dot-box4__btn"></button>
     <!-- ボタン5 (SP版のみ表示)-->
-    <button class="b-voice-dot-box-5"></button>
+    <button class="b-voice-dot-box5__btn"></button>
     <!-- ボタン6 (SP版のみ表示)-->
-    <button class="b-voice-dot-box-6"></button>
+    <button class="b-voice-dot-box6__btn"></button>
   </div>
 </section>
 </main>

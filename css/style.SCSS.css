@@ -744,13 +744,13 @@ h3 {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  padding: 24px;
   gap: 24px;
   position: relative;
 }
 
 /*卒業生の声：大見出し*/
 .b-voice-h2 {
+  margin-top: 24px;
   text-align: center;
 }
 
@@ -758,38 +758,88 @@ h3 {
 .l-voice-slider-box {
   display: flex;
   justify-content: space-around;
-  margin: 0 24px;
+  padding: 0 24px;
+  position: relative;
+  overflow: hidden;
 }
 
 /*卒業生の声：カード共通のCSS*/
 [class*=l-voice-slider-card] {
   display: flex;
   flex-direction: column;
+  display: none;
   gap: 4px;
   width: 40%;
   font-size: 12px;
   text-decoration: none;
   color: black;
-  position: relative;
   transition: all 1s ease;
-  /*アニメーション動作チェック*/
 }
 [class*=l-voice-slider-card]:hover {
-  opacity: 0.4;
-  transform: translate(50%, 0) scale(80%);
+  transform: scale(105%);
+  opacity: 0.8;
 }
 @media screen and (max-width: 500px) {
   [class*=l-voice-slider-card] {
-    transform: translate(0, 0) scale(100%);
     width: 80%;
     font-size: 16px;
     gap: 8px;
   }
 }
-
-/*動作チェックの為追加*/
-.l-voice-slider-card2 {
-  display: none;
+[class*=l-voice-slider-card][class$="--default"] {
+  display: flex;
+}
+[class*=l-voice-slider-card][class$="--next"] {
+  /*JS制御用：次ページのカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--next"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(100%, 0) scale(90%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+[class*=l-voice-slider-card][class$="--sub-next"] {
+  /*JS制御用：次々ページのカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--sub-next"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(200%, 0) scale(80%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+[class*=l-voice-slider-card][class$="--prev"] {
+  /*JS制御用：前ページのカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--prev"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(-100%, 0) scale(90%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+[class*=l-voice-slider-card][class$="--sub-prev"] {
+  /*JS制御用：前々ページ目のカード表示位置*/
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  [class*=l-voice-slider-card][class$="--sub-prev"] {
+    position: absolute;
+    z-index: 100;
+    transform: translate(-200%, 0) scale(80%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
 }
 
 /*ネストで要素が分かりやすいように記述
@@ -895,8 +945,10 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 2vw;
+  margin-bottom: 24px;
 }
-.b-voice-dot-box > button {
+
+[class*=b-voice-dot-box][class*=__btn] {
   width: 20px;
   height: 4px;
   border: none;
@@ -905,11 +957,13 @@ h3 {
   cursor: pointer;
   /*動作チェック用テスト*/
 }
-.b-voice-dot-box > button:hover {
+[class*=b-voice-dot-box][class*=__btn]:hover {
   opacity: 0.5;
 }
-.b-voice-dot-box > button:nth-of-type(1) {
+[class*=b-voice-dot-box][class*=__btn][class$="--active"] {
+  /*JS制御用：ドットの現在位置*/
   background-color: black;
+  pointer-events: none;
 }
 
 /*卒業生の声ここまで*/
